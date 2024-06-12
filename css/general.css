@@ -29,12 +29,14 @@ Paragraph L: 1.8
 :root {
     --primary-color: #76bfc4;
 }
+
 /*
 - Tints
 */
 :root {
     --primary-color--tint-90: #f1f9f9;
 }
+
 /*
 - Shades
 
