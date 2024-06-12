@@ -39,18 +39,33 @@ Paragraph L: 1.8
 
 /*
 - Shades
+*/
+:root {
+    --primary-color--shade-40: #477376;
+}
 
+/*
 - Accents
 
 - Greys
+*/
+:root {
+    --grey-color--3: #333;
+    --grey-color--5: #555;
+    --grey-color--f: #fff;
+}
 
-
+/*
 --- 03 SHADOWS
 
 
 --- 04 BORDER RADIUS
+*/
+:root {
+    --border-radius--8: 8px;
+}
 
-
+/*
 --- 05 WHITESPACE
 
 - Spacing system (px)
@@ -77,15 +92,15 @@ body {
     font-family: "Nunito", sans-serif;
     font-weight: 400;
     line-height: 1;
-    color: #555;
+    color: var(--grey-color--5);
     overflow-x: hidden;
 }
 
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
-    color: #333;
-    font-weight: 700;
+    color: var(--grey-color--3);
+    font-weight: 800;
     letter-spacing: -0.5px;
 }
 
