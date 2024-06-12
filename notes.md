@@ -22,6 +22,7 @@
 * [ ] Title
 * [ ] Favicon
 * [ ] Image optimization
+  * https://squoosh.app/
 * [ ] Performance check
 * [ ] SEO optimization
 * [ ] Accesibility check
