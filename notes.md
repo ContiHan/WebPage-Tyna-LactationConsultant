@@ -1,6 +1,12 @@
 # Design
 
+* [ ] Logo
+
 # Content
+
+* [ ] Hero text
+  * H1
+  * Description
 
 # ToDo's
 
@@ -13,3 +19,9 @@
   * Spacing
 * [ ] Domain
 * [ ] Web wireframe
+* [ ] Title
+* [ ] Favicon
+* [ ] Image optimization
+* [ ] Performance check
+* [ ] SEO optimization
+* [ ] Accesibility check
