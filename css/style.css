@@ -86,6 +86,39 @@
     width: 100%;
 }
 
+.families-satisfied {
+    display: flex;
+    align-items: center;
+    margin-top: 8rem;
+    gap: 1.6rem;
+}
+
+.families-customers {
+    display: flex;
+}
+
+.families-customers img {
+    width: 4.8rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color--tint-90);
+    margin-right: -1.6rem;
+}
+
+.families-customers img:last-child {
+    margin: 0;
+}
+
+.families-satisfied-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.families-satisfied-text span {
+    color: var(--primary-color--shade-10);
+    font-weight: 700;
+}
+
 /*************************************/
 /* FEATURED IN SECTION */
 /*************************************/
