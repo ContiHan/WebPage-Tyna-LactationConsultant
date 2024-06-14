@@ -84,6 +84,7 @@
 
 .hero-img {
     width: 100%;
+    border-radius: var(--border-radius--8);
 }
 
 .families-satisfied {
@@ -149,11 +150,18 @@
 }
 
 /*************************************/
-/* HOW IT WORKS SECTION */
+/* OFFER SECTION */
 /*************************************/
 
 .section-offer {
     padding: 9.6rem 0;
+}
+
+.offer-bullet-point {
+    font-size: 8.6rem;
+    font-weight: 600;
+    color: #ddd;
+    margin-bottom: 1.2rem;
 }
 
 .offer-description {
