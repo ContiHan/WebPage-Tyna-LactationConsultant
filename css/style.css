@@ -296,7 +296,7 @@
 }
 
 .grid-footer {
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1.5fr;
 }
 
 .footer-logo-col {
@@ -353,6 +353,9 @@
 
 .address {
     margin-bottom: 2.4rem;
+}
+.address-name {
+    margin-bottom: 0.8rem;
 }
 
 .footer-nav {
