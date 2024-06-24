@@ -202,6 +202,34 @@
 }
 
 /*************************************/
+/* TESTIMONIALS SECTION */
+/*************************************/
+
+.section-testimonials {
+    padding: 9.6rem 0;
+    background-color: var(--primary-color--tint-90);
+}
+
+.testimonial-gallery {
+    gap: 8rem;
+}
+
+.testimonial-gallery-item {
+    border-radius: var(--border-radius--8);
+    overflow: hidden;
+}
+
+.testimonial-gallery-item img {
+    display: block;
+    width: 100%;
+    transition: all 0.4s;
+}
+
+.testimonial-gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+/*************************************/
 /* PRICING SECTION */
 /*************************************/
 
