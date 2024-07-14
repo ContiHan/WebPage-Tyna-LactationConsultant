@@ -402,7 +402,7 @@
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    width: 2.4rem;
+    min-width: 2.4rem;
     aspect-ratio: 1;
     border-radius: var(--border-radius--8);
     background-color: var(--primary-color--tint-90);
