@@ -212,7 +212,6 @@ body {
 .btn--form:hover {
     background-color: var(--grey-color--f);
     color: var(--primary-color--shade-70);
-    box-shadow: inset 0 0 0 3px var(--primary-color--shade-70);
 }
 
 .list {
