@@ -32,6 +32,7 @@ Paragraph L: 1.8
 */
 :root {
     --primary-color: #0b7285;
+    --primary-color--alpha35: rgba(11, 114, 133, 0.35);
 }
 
 /*
@@ -39,7 +40,10 @@ Paragraph L: 1.8
 */
 :root {
     --primary-color--tint-90: #e7f1f3;
+    --primary-color--tint-90--alpha50: rgba(231, 241, 243, 0.5);
     --primary-color--tint-80: #cee3e7;
+    --primary-color--tint-20: #3c8e9d;
+    --primary-color--tint-20--alpha35: rgba(60, 142, 157, 0.35);
 }
 
 /*
@@ -47,6 +51,7 @@ Paragraph L: 1.8
 */
 :root {
     --primary-color--shade-10: #0a6778;
+    --primary-color--shade-70: #032228;
 }
 
 /*
@@ -58,6 +63,7 @@ Paragraph L: 1.8
     --grey-color--3: #333;
     --grey-color--5: #555;
     --grey-color--76: #767676;
+    --grey-color--a: #aaa;
     --grey-color--f: #fff;
 }
 
@@ -177,6 +183,36 @@ body {
     color: var(--primary-color--shade-10);
     margin-bottom: 1.6rem;
     letter-spacing: 0.75px;
+}
+
+.btn,
+.btn:is(:link, :visited) {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1.6rem 3.2rem;
+    border-radius: 8px;
+
+    /* transition: background-color 0.3s, box-shadow 0.3s; */
+    transition: all 0.3s;
+
+    /* only necessary for .btn */
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn--form {
+    background-color: var(--primary-color--shade-70);
+    color: var(--primary-color--tint-90);
+    padding: 1.2rem;
+}
+
+.btn--form:hover {
+    background-color: var(--grey-color--f);
+    color: var(--primary-color--shade-70);
+    box-shadow: inset 0 0 0 3px var(--primary-color--shade-70);
 }
 
 .list {
