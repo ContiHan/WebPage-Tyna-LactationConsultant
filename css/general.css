@@ -252,3 +252,11 @@ body {
 .center-text {
     text-align: center;
 }
+
+/*************************************/
+/* ELEMENT OVERRIDE */
+/*************************************/
+
+strong {
+    font-weight: 500;
+}
