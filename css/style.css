@@ -241,16 +241,27 @@
     letter-spacing: 0.75px;
 }
 
+.pricing-price-box {
+    display: flex;
+    height: calc(6.2rem + 1.4rem);
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
 .pricing-price {
     font-size: 6.2rem;
     font-weight: 600;
     color: var(--grey-color--3);
-    margin-bottom: 1.6rem;
 }
 
 .pricing-price span {
     font-size: 3rem;
     margin-left: 0.4rem;
+}
+
+.pricing-additional-price {
+    font-size: 1.4rem;
+    color: var(--grey-color--76);
 }
 
 .pricing-text {
