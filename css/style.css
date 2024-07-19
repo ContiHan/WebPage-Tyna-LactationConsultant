@@ -370,6 +370,9 @@
     url("../img/cta/cta.jpg");
     background-size: cover;
     background-position: top;
+
+    /*  Because of weird graphic render  */
+    width: 101%
 }
 
 .cta-form {
