@@ -14,8 +14,12 @@
     position: relative;
 }
 
+.header .logo {
+    margin-top: 8rem;
+}
+
 .logo {
-    height: 9.6rem;
+    height: 20rem;
 }
 
 /*************************************/
