@@ -9,17 +9,13 @@
     background-color: var(--primary-color--tint-90);
 
     /* Because of sticky header */
-    height: 12.8rem;
+    height: 16.0rem;
     padding: 0 4.8rem;
     position: relative;
 }
 
-.header .logo {
-    margin-top: 8rem;
-}
-
 .logo {
-    height: 20rem;
+    height: 15.4rem;
 }
 
 /*************************************/
@@ -38,7 +34,7 @@
     display: inline-block;
 
     color: var(--grey-color--3);
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 500;
     text-decoration: none;
 
@@ -503,13 +499,18 @@
 
 .footer-logo {
     display: block;
-    margin-bottom: 3.2rem;
+    margin-bottom: 2.4rem;
+}
+
+.footer-logo .logo {
+    height: 9.6rem;
 }
 
 .social-links {
     display: flex;
     list-style: none;
     gap: 2.4rem;
+    margin-bottom: 2.4rem;
 }
 
 .social-link-icon {
