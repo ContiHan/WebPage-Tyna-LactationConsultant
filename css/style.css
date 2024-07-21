@@ -150,6 +150,36 @@
 }
 
 /*************************************/
+/* BIO SECTION */
+/*************************************/
+
+.section-bio {
+    padding: 9.6rem 0;
+}
+
+.bio-grid {
+    grid-template-columns: 35fr 65fr;
+}
+
+.bio-img {
+    width: 100%;
+    border-radius: var(--border-radius--8);
+}
+
+.bio-text, .bio-ending {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 1.6rem;
+}
+.bio-ending {
+    margin-bottom: 0;
+}
+
+.bio-ending span {
+    font-weight: 600;
+}
+
+/*************************************/
 /* OFFER SECTION */
 /*************************************/
 
