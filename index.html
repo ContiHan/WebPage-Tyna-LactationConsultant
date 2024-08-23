@@ -588,25 +588,28 @@
                         kojení už dnes.
                     </p>
 
-                    <form class="cta-form" action="#">
+                    <!-- Contact form -->
+                    <form class="cta-form" action="php/form-handler.php" method="post">
                         <div class="cta-form-text-box">
                             <label for="full-name">Celé jméno</label>
-                            <input id="full-name" type="text" placeholder="Lenka Vlčková" required/>
+                            <input id="full-name" name="full_name" type="text" placeholder="Lenka Vlčková" required/>
                         </div>
                         <div class="cta-form-text-box">
                             <label for="email">E-mail</label>
-                            <input id="email" type="email" placeholder="lenka.vlckova@posta.cz" required/>
+                            <input id="email" name="email" type="email" placeholder="lenka.vlckova@posta.cz" required/>
                         </div>
                         <div class="cta-form-textarea-box">
                             <label for="message">Co Vás trápí?</label>
-                            <textarea id="message" rows="8" cols="50" maxlength="5000" required></textarea>
+                            <textarea id="message" name="message" rows="8" cols="50" maxlength="5000"
+                                      required></textarea>
                         </div>
                         <div class="cta-form-checkbox-box">
                             <input type="checkbox" id="consent" name="consent" required>
                             <label for="consent">Souhlasím se zpracováním osobních dat</label>
                         </div>
-                        <button class="btn btn--form">Odeslat</button>
+                        <button class="btn btn--form" type="submit">Odeslat</button>
                     </form>
+
                 </div>
                 <div class="cta-img-box" role="img" aria-label="Žena s novorozencem v náručí"></div>
             </div>
