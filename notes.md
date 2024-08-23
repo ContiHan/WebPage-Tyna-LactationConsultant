@@ -25,4 +25,4 @@
   * https://squoosh.app/
 * [ ] Performance check
 * [ ] SEO optimization
-* [ ] Accesibility check
+* [ ] Accessibility check
