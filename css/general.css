@@ -15,7 +15,7 @@ Bold: 700
 - Line heights
 Default: 1
 Small: 1.05
-Medium: 1.2
+Medium: 1.2;
 Paragraph M: 1.6
 Paragraph L: 1.8
 
@@ -205,6 +205,7 @@ body {
 }
 
 .btn--form {
+    margin-top: 1.6rem;
     background-color: var(--primary-color--shade-70);
     color: var(--primary-color--tint-90);
     padding: 1.2rem;

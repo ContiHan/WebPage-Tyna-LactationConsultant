@@ -1,0 +1,124 @@
+/*
+rem and em do NOT depend on html font-size in media queries
+Instead, 1rem = 1em = 16px
+*/
+
+
+/*************************************/
+/* BELOW 1344px (Smaller desktops) */
+/*************************************/
+@media (max-width: 84em) {
+    .hero {
+        max-width: 120rem;
+    }
+
+    .heading-primary {
+        font-size: 4.4rem;
+    }
+}
+
+/*************************************/
+/* BELOW 1200px (Landscape tablets) */
+/*************************************/
+@media (max-width: 75em) {
+    html {
+        font-size: 56.25%;
+    }
+
+    .grid {
+        column-gap: 4.8rem;
+        row-gap: 6.4rem;
+    }
+
+    .heading-secondary {
+        font-size: 3.6rem;
+    }
+
+    .heading-tertiary {
+        font-size: 2.4rem;
+    }
+
+    .main-nav-list {
+        gap: 3.2rem;
+    }
+
+    .header {
+        padding: 0 3.2rem;
+    }
+
+    .hero {
+        gap: 4.8rem;
+    }
+}
+
+/*************************************/
+/* BELOW 944px (Tablets) */
+/*************************************/
+@media (max-width: 59em) {
+    html {
+        /* 8px / 16px = 0.5 = 50% */
+        font-size: 50%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 0 8rem;
+        gap: 6.4rem;
+    }
+
+    .hero-img {
+        width: 60%;
+    }
+
+    .hero-text-box,
+    .hero-img-box {
+        text-align: center;
+    }
+
+    .families-satisfied {
+        justify-content: center;
+        margin-top: 3.2rem;
+    }
+
+    .featured-img {
+        height: 8rem;
+    }
+
+    .pricing-card {
+        padding: 3.2rem;
+    }
+
+    .pricing-name {
+        min-height: 4rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .grid--4-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta {
+        grid-template-columns: 5fr 4fr;
+    }
+
+    .cta-form {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-form-textarea-box,
+    .cta-form-checkbox-box {
+        grid-column: auto;
+    }
+}
+
+/*************************************/
+/* BELOW 704px (Smaller tablets) */
+/*************************************/
+@media (max-width: 44em) {
+}
+
+/*************************************/
+/* BELOW 544px (Phones) */
+/*************************************/
+@media (max-width: 34em) {
+}
