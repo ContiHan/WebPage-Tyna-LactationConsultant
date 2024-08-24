@@ -74,6 +74,21 @@
     display: none;
 }
 
+/* STICKY NAVIGATION*/
+
+.sticky {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: var(--grey-color--f--alpha95);
+    z-index: 9999;
+    /* TODO tohle musí být v proměnné a taky tam udělat efekt obálky*/
+    box-shadow: 0 1.2rem 2.4rem -2.4rem rgba(0, 0, 0, 0.8);
+}
+
 /*************************************/
 /* HERO SECTION */
 /*************************************/
