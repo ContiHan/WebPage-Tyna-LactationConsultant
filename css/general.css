@@ -66,6 +66,7 @@ Paragraph L: 1.8
     --grey-color--76: #767676;
     --grey-color--a: #aaa;
     --grey-color--f: #fff;
+    --grey-color--f--alpha95: rgba(255, 255, 255, 0.95);
 }
 
 /*
