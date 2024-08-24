@@ -15,6 +15,10 @@ Instead, 1rem = 1em = 16px
     .heading-primary {
         font-size: 4.4rem;
     }
+
+    .pricing-card {
+        width: 80%;
+    }
 }
 
 /*************************************/
@@ -27,7 +31,6 @@ Instead, 1rem = 1em = 16px
 
     .grid {
         column-gap: 4.8rem;
-        row-gap: 6.4rem;
     }
 
     .heading-secondary {
@@ -49,6 +52,10 @@ Instead, 1rem = 1em = 16px
     .hero {
         gap: 4.8rem;
     }
+
+    .pricing-card {
+        width: 85%;
+    }
 }
 
 /*************************************/
@@ -67,7 +74,7 @@ Instead, 1rem = 1em = 16px
     }
 
     .hero-img {
-        width: 60%;
+        width: 75%;
     }
 
     .hero-text-box,
@@ -85,12 +92,7 @@ Instead, 1rem = 1em = 16px
     }
 
     .pricing-card {
-        padding: 3.2rem;
-    }
-
-    .pricing-name {
-        min-height: 4rem;
-        margin-bottom: 1.6rem;
+        width: 90%;
     }
 
     .grid--4-cols {
