@@ -37,21 +37,48 @@ allLinks.forEach(function (link) {
 })
 
 // sticky navigation
+// const sectionHeroEl = document.querySelector(".section-hero");
+//
+// const observer = new IntersectionObserver(function (entries) {
+//         const entry = entries[0];
+//         const isHeroSectionVisible = entry.isIntersecting;
+//
+//         if (isHeroSectionVisible) {
+//             document.querySelector(".header").classList.remove("sticky");
+//         }
+//         else{
+//             document.querySelector(".header").classList.add("sticky");
+//         }
+//     },
+//     {
+//         root: null,
+//         threshold: 0
+//     });
+// observer.observe(sectionHeroEl);
+
+
+// sticky navigation
+const headerHeight = headerEl.getBoundingClientRect().height;
+const spacer = document.createElement("div");
+spacer.style.height = `${headerHeight}px`;
+spacer.style.display = "none";
+headerEl.after(spacer);
+
 const sectionHeroEl = document.querySelector(".section-hero");
-
 const observer = new IntersectionObserver(function (entries) {
-        const entry = entries[0];
-        const isHeroSectionVisible = entry.isIntersecting;
+    const entry = entries[0];
+    const isHeroSectionVisible = entry.isIntersecting;
 
-        if (isHeroSectionVisible) {
-            document.querySelector(".header").classList.remove("sticky");
-        }
-        else{
-            document.querySelector(".header").classList.add("sticky");
-        }
-    },
-    {
-        root: null,
-        threshold: 0
-    });
+    if (isHeroSectionVisible) {
+        headerEl.classList.remove("sticky");
+        spacer.style.display = "none";
+    } else {
+        headerEl.classList.add("sticky");
+        spacer.style.display = "block";
+    }
+}, {
+    root: null,
+    threshold: 0
+});
+
 observer.observe(sectionHeroEl);
