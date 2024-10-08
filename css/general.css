@@ -217,6 +217,18 @@ body {
     color: var(--primary-color--shade-70);
 }
 
+.btn--modal {
+    margin-top: 1.6rem;
+    background-color: var(--grey-color--3);
+    color: var(--grey-color--f);
+    padding: 1.2rem;
+}
+
+.btn--modal:hover {
+    background-color: var(--grey-color--f);
+    color: var(--grey-color--3);
+}
+
 .list {
     display: flex;
     flex-direction: column;

@@ -62,3 +62,45 @@ const observer = new IntersectionObserver(function (entries) {
 });
 
 observer.observe(sectionHeroEl);
+
+// handle form after sent message
+document.addEventListener("DOMContentLoaded", function () {
+    const status = getQueryParam("status");
+    const message = getQueryParam("message");
+
+    if (status && message) {
+        showModal(decodeURIComponent(message), status);
+    }
+
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+});
+
+function showModal(message, status) {
+    const modalMessageEl = document.querySelector(".modal-message");
+    const modalEl = document.querySelector(".response-modal");
+
+    modalMessageEl.innerText = message;
+    modalEl.style.display = "block";
+
+    setTimeout(function () {
+        closeModal();
+        window.history.replaceState({}, document.title, "/");
+    }, 5000);
+
+    if (status === "success") {
+        resetForm();
+    }
+}
+
+function closeModal() {
+    const modal = document.querySelector(".response-modal");
+    modal.style.display = "none";
+}
+
+function resetForm() {
+    const form = document.querySelector(".cta-form");
+    form.reset();
+}
