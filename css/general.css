@@ -24,35 +24,54 @@ Paragraph L: 1.8
 
 --- 02 COLORS
 
-#f79c2e - orange
-#78cdd0 - turquoise
 #9d8cb7 - purple
+#78cdd0 - turquoise
+#f79c2e - orange
 
 - Primary
 */
 :root {
-    --primary-color: #0b7285;
-    --primary-color--alpha35: rgba(11, 114, 133, 0.35);
+    --primary-color: #9d8cb7;
+    --primary-color--alpha35: rgba(157, 140, 183, 0.35);
+
+    --secondary-color: #78cdd0;
+
+    --tertiary-color: #f79c2e;
+    --tertiary-color--alpha35: rgba(247, 156, 46, 0.35);
 }
 
 /*
 - Tints
 */
 :root {
-    --primary-color--tint-90: #e7f1f3;
-    --primary-color--tint-90--alpha50: rgba(231, 241, 243, 0.5);
-    --primary-color--tint-80: #cee3e7;
-    --primary-color--tint-20: #3c8e9d;
-    --primary-color--tint-20--alpha35: rgba(60, 142, 157, 0.35);
+    --primary-color--tint-90: #f5f4f8;
+    --primary-color--tint-90--alpha50: rgba(245, 244, 248, 0.5);
+    --primary-color--tint-80: #ebe8f1;
+    --primary-color--tint-20: #b1a3c5;
+    --primary-color--tint-20--alpha35: rgba(177, 163, 197, 0.35);
+
+    --secondary-color--tint-90: #f2fafa;
+
+    --tertiary-color--tint-90: #fef5ea;
+    --tertiary-color--tint-90--alpha50: rgba(254, 245, 234, 0.5);
+    --tertiary-color--tint-80: #fdebd5;
+    --tertiary-color--tint-20: #f9b058;
+    --tertiary-color--tint-20--alpha35: rgba(249, 176, 88, 0.35);
 }
 
 /*
 - Shades
 */
 :root {
-    --primary-color--shade-10: #0a6778;
-    --primary-color--shade-30: #08505d;
-    --primary-color--shade-70: #032228;
+    --primary-color--shade-10: #8d7ea5;
+    --primary-color--shade-30: #6e6280;
+    --primary-color--shade-70: #2f2a37;
+
+    --secondary-color--shade-10: #6cb9bb;
+    --secondary-color--shade-30: #549092;
+
+    --tertiary-color--shade-10: #de8c29;
+    --tertiary-color--shade-70: #4a2f0e;
 }
 
 /*
@@ -182,7 +201,6 @@ body {
     font-size: 1.6rem;
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--primary-color--shade-10);
     margin-bottom: 1.6rem;
     letter-spacing: 0.75px;
 }
@@ -207,14 +225,14 @@ body {
 
 .btn--form {
     margin-top: 1.6rem;
-    background-color: var(--primary-color--shade-70);
-    color: var(--primary-color--tint-90);
+    background-color: var(--tertiary-color--shade-70);
+    color: var(--tertiary-color--tint-90);
     padding: 1.2rem;
 }
 
 .btn--form:hover {
     background-color: var(--grey-color--f);
-    color: var(--primary-color--shade-70);
+    color: var(--tertiary-color--shade-70);
 }
 
 .btn--modal {

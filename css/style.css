@@ -53,7 +53,7 @@
 }
 
 .main-nav-link.nav-cta:is(:hover, :active) {
-    background-color: var(--primary-color--shade-10);
+    background-color: var(--tertiary-color--shade-10);
 }
 
 /* MOBILE */
@@ -190,6 +190,10 @@
     padding: 9.6rem 0;
 }
 
+.bio-subtitle {
+    color: var(--secondary-color--shade-10);
+}
+
 .bio {
     display: grid;
     column-gap: 1.2rem;
@@ -203,8 +207,8 @@
 }
 
 .bio-text-box {
-    color: var(--primary-color--tint-90);
-    background-color: var(--primary-color--shade-30);
+    color: var(--secondary-color--tint-90);
+    background-color: var(--secondary-color--shade-30);
     padding: 2.4rem;
     border-radius: 0 var(--border-radius--8) var(--border-radius--8) 0;
     box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
@@ -230,6 +234,10 @@
 
 .section-offer {
     padding: 9.6rem 0;
+}
+
+.offer-subtitle {
+    color: var(--tertiary-color--shade-10);
 }
 
 .offer-description {
@@ -260,13 +268,13 @@
 
 .offer-img-box::before {
     width: 52%;
-    background-color: var(--primary-color--tint-90);
+    background-color: var(--tertiary-color--tint-90);
     z-index: -100;
 }
 
 .offer-img-box::after {
     width: 46%;
-    background-color: var(--primary-color--tint-80);
+    background-color: var(--tertiary-color--tint-80);
     z-index: -50;
 }
 
@@ -282,6 +290,10 @@
 
 .section-pricing {
     padding: 9.6rem 0;
+}
+
+.pricing-subtitle {
+    color: var(--primary-color--shade-10);
 }
 
 .pricing-card {
@@ -381,7 +393,11 @@
 
 .section-testimonials {
     padding: 9.6rem 0;
-    background-color: var(--primary-color--tint-90);
+    background-color: var(--secondary-color--tint-90);
+}
+
+.testimonials-subtitle {
+    color: var(--secondary-color--shade-10);
 }
 
 .testimonial-gallery {
@@ -418,11 +434,11 @@
     border-radius: 12px;
     overflow: hidden;
 
-    background-image: linear-gradient(to right bottom, var(--primary-color--tint-20), var(--primary-color));
+    background-image: linear-gradient(to right bottom, var(--tertiary-color--tint-20), var(--tertiary-color));
 }
 
 .cta-text-box {
-    color: var(--primary-color--shade-70);
+    color: var(--tertiary-color--shade-70);
     padding: 4.8rem 6.4rem 6.4rem 6.4rem;
 }
 
@@ -438,7 +454,7 @@
 }
 
 .cta-img-box {
-    background-image: linear-gradient(to right bottom, var(--primary-color--tint-20--alpha35), var(--primary-color--alpha35)),
+    background-image: linear-gradient(to right bottom, var(--tertiary-color--tint-20--alpha35), var(--tertiary-color--alpha35)),
     url("../img/cta/cta.jpg");
     background-size: cover;
     background-position: top;
@@ -470,7 +486,7 @@
     font-family: inherit;
     color: inherit;
     border: none;
-    background-color: var(--primary-color--tint-90);
+    background-color: var(--tertiary-color--tint-90);
     border-radius: var(--border-radius--8);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -481,18 +497,18 @@
 
 .cta-form textarea::-webkit-scrollbar-track {
     border-radius: var(--border-radius--8);
-    background: var(--primary-color--tint-90);
+    background: var(--tertiary-color--tint-90);
 }
 
 .cta-form textarea::-webkit-scrollbar-thumb {
     cursor: context-menu;
     border-radius: var(--border-radius--8);
-    background-color: var(--primary-color);
-    border: 0.3rem solid var(--primary-color--tint-90);
+    background-color: var(--tertiary-color);
+    border: 0.3rem solid var(--tertiary-color--tint-90);
 }
 
 .cta-form textarea::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primary-color--shade-70);
+    background-color: var(--tertiary-color--shade-70);
 }
 
 .cta-form-textarea-box {
@@ -517,7 +533,7 @@
     min-width: 2.4rem;
     aspect-ratio: 1;
     border-radius: var(--border-radius--8);
-    background-color: var(--primary-color--tint-90);
+    background-color: var(--tertiary-color--tint-90);
     position: relative;
     display: flex;
     align-items: center;
@@ -529,7 +545,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    /* TODO tohle jde vyřešit i přímo svg do html*/
+    /* TODO tohle jde vyřešit i přímo svg do html */
     background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" %3E%3Cpolyline points="20 6 9 17 4 12"/%3E%3C/svg%3E') center center no-repeat;
     background-size: 2rem;
     opacity: 0;
@@ -546,7 +562,7 @@
 
 .cta *:focus {
     outline: none;
-    box-shadow: 0 0 0 0.8rem var(--primary-color--tint-90--alpha50);
+    box-shadow: 0 0 0 0.8rem var(--tertiary-color--tint-90--alpha50);
 }
 
 /* SUBMIT MODAL WINDOW */
