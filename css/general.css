@@ -68,7 +68,7 @@ Paragraph L: 1.8
     --primary-color--shade-70: #2f2a37;
 
     --secondary-color--shade-10: #6cb9bb;
-    --secondary-color--shade-30: #549092;
+    --secondary-color--shade-50: #3c6768;
 
     --tertiary-color--shade-10: #de8c29;
     --tertiary-color--shade-70: #4a2f0e;
@@ -82,6 +82,7 @@ Paragraph L: 1.8
 :root {
     --grey-color--3: #333;
     --grey-color--5: #555;
+    --grey-color--8: #888;
     --grey-color--76: #767676;
     --grey-color--a: #aaa;
     --grey-color--f: #fff;
