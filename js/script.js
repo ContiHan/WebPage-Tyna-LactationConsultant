@@ -28,7 +28,16 @@ allLinks.forEach(function (link) {
             }
             if (href !== "#" && href.startsWith("#")) {
                 const sectionEl = document.querySelector(href);
-                sectionEl.scrollIntoView({behavior: "smooth"});
+                if (sectionEl) {
+                    const topOffset = headerHeight;
+                    const elementPosition = sectionEl.getBoundingClientRect().top + window.scrollY;
+                    const offsetPosition = elementPosition - topOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
             }
         }
         if (link.classList.contains("main-nav-link")) {
