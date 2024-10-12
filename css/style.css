@@ -317,11 +317,12 @@
 
 .pricing-card--common {
     padding: 4.6rem;
-    border: 0.2rem solid var(--primary-color--tint-90);
+    border: 0.2rem solid var(--primary-color--tint-60);
+    background-color: var(--primary-color--tint-90);
 }
 
 .pricing-card--epic {
-    background-color: var(--primary-color--tint-90);
+    background-color: var(--primary-color--tint-60);
 }
 
 .header-pricing {
@@ -331,7 +332,7 @@
 
 .pricing-name {
     font-size: 2.0rem;
-    color: var(--primary-color--shade-10);
+    color: var(--primary-color--shade-30);
     text-transform: uppercase;
     font-weight: 600;
     min-height: 4rem;
@@ -359,7 +360,7 @@
 
 .pricing-additional-price {
     font-size: 1.4rem;
-    color: var(--grey-color--76);
+    color: var(--grey-color--5);
 }
 
 .pricing-text {
@@ -385,7 +386,7 @@
 
 .pricing-feature-title {
     font-size: 2.4rem;
-    color: #333;
+    color: var(--grey-color--3);
     font-weight: 700;
     margin-bottom: 1.6rem;
 }

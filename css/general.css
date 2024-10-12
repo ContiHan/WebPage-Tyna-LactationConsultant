@@ -47,6 +47,7 @@ Paragraph L: 1.8
     --primary-color--tint-90: #f5f4f8;
     --primary-color--tint-90--alpha50: rgba(245, 244, 248, 0.5);
     --primary-color--tint-80: #ebe8f1;
+    --primary-color--tint-60: #d8d1e2;
     --primary-color--tint-20: #b1a3c5;
     --primary-color--tint-20--alpha35: rgba(177, 163, 197, 0.35);
 
@@ -267,7 +268,7 @@ body {
 .list-icon {
     width: 3.2rem;
     height: 3.2rem;
-    color: var(--primary-color--shade-10);
+    color: var(--primary-color--shade-30);
     flex-shrink: 0;
 }
 
