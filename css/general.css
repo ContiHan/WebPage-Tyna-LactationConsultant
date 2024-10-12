@@ -31,48 +31,42 @@ Paragraph L: 1.8
 - Primary
 */
 :root {
-    --primary-color: #9d8cb7;
-    --primary-color--alpha35: rgba(157, 140, 183, 0.35);
+    --primary-color: #9b85bd;
 
     --secondary-color: #78cdd0;
 
-    --tertiary-color: #f79c2e;
-    --tertiary-color--alpha35: rgba(247, 156, 46, 0.35);
+    --tertiary-color: #dc933b;
+    --tertiary-color--alpha35: rgba(219, 147, 59, 0.35);
 }
 
 /*
 - Tints
 */
 :root {
-    --primary-color--tint-90: #f5f4f8;
-    --primary-color--tint-90--alpha50: rgba(245, 244, 248, 0.5);
-    --primary-color--tint-80: #ebe8f1;
-    --primary-color--tint-60: #d8d1e2;
-    --primary-color--tint-20: #b1a3c5;
-    --primary-color--tint-20--alpha35: rgba(177, 163, 197, 0.35);
+    --primary-color--tint-90: #f5f3f8;
+    --primary-color--tint-60: #d7cee5;
 
     --secondary-color--tint-90: #f2fafa;
 
-    --tertiary-color--tint-90: #fef5ea;
-    --tertiary-color--tint-90--alpha50: rgba(254, 245, 234, 0.5);
-    --tertiary-color--tint-80: #fdebd5;
-    --tertiary-color--tint-20: #f9b058;
-    --tertiary-color--tint-20--alpha35: rgba(249, 176, 88, 0.35);
+    --tertiary-color--tint-90: #fcf4eb;
+    --tertiary-color--tint-90--alpha50: rgba(252, 244, 235, 0.5);
+    --tertiary-color--tint-80: #f8e9d8;
+    --tertiary-color--tint-20: #e3a962;
+    --tertiary-color--tint-20--alpha35: rgba(227, 169, 98, 0.35);
 }
 
 /*
 - Shades
 */
 :root {
-    --primary-color--shade-10: #8d7ea5;
-    --primary-color--shade-30: #6e6280;
-    --primary-color--shade-70: #2f2a37;
+    --primary-color--shade-10: #8c78aa;
+    --primary-color--shade-30: #6d5d84;
 
     --secondary-color--shade-10: #6cb9bb;
     --secondary-color--shade-50: #3c6768;
 
-    --tertiary-color--shade-10: #de8c29;
-    --tertiary-color--shade-70: #4a2f0e;
+    --tertiary-color--shade-10: #c68435;
+    --tertiary-color--shade-70: #422c12;
 }
 
 /*
