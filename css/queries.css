@@ -267,6 +267,14 @@ Instead, 1rem = 1em = 16px
         padding: 2.4rem 1.6rem;
     }
 
+    .header {
+        height: 10.6rem;
+    }
+
+    .logo {
+        height: 10.2rem;
+    }
+
     .section-hero {
         padding: 2.4rem 0 6.4rem;
     }
@@ -310,5 +318,23 @@ Instead, 1rem = 1em = 16px
     .footer-nav-col {
         grid-row: auto;
         justify-self: auto;
+    }
+}
+
+/*************************************/
+/* BELOW 400px (Old Phones) */
+/*************************************/
+@media (max-width: 25em) {
+    .header {
+        height: 8rem;
+    }
+
+    .logo {
+        background-image: url("/img/favicon/favicon-32x32.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 32px;
+        height: 32px;
     }
 }
