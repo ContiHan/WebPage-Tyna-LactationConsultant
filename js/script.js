@@ -113,3 +113,30 @@ function resetForm() {
     const form = document.querySelector(".cta-form");
     form.reset();
 }
+
+// swiper for testimonials section
+new Swiper('.testimonial-card-wrapper', {
+    loop: true,
+    spaceBetween: 50,
+    autoHeight: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1
+        },
+        545: {
+            slidesPerView: 2
+        },
+        945: {
+            slidesPerView: 3
+        }
+    }
+});

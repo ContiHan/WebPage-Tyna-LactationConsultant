@@ -79,6 +79,7 @@ Paragraph L: 1.8
     --grey-color--5: #555;
     --grey-color--8: #888;
     --grey-color--76: #767676;
+    --grey-color--76--alpha30: rgba(117, 117, 117, 0.3);
     --grey-color--a: #aaa;
     --grey-color--f: #fff;
     --grey-color--f--alpha95: rgba(255, 255, 255, 0.95);

@@ -319,6 +319,10 @@ Instead, 1rem = 1em = 16px
         grid-row: auto;
         justify-self: auto;
     }
+
+    .testimonial-card-wrapper {
+        margin: 0 9.6rem 2.4rem;
+    }
 }
 
 /*************************************/
@@ -327,5 +331,9 @@ Instead, 1rem = 1em = 16px
 @media (max-width: 25em) {
     .pricing-card {
         width: 95%;
+    }
+
+    .testimonial-card-wrapper {
+        margin: 0 6.4rem 2.4rem;
     }
 }
