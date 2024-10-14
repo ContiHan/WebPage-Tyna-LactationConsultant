@@ -70,6 +70,7 @@
     background: none;
     cursor: pointer;
     display: none;
+    z-index: 10000;
 }
 
 .icon-mobile-nav {
@@ -374,14 +375,21 @@
     text-align: center;
 }
 
+.pricing-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color--tint-90);
+    border-radius: 50%;
+    width: 6.4rem;
+    height: 6.4rem;
+    margin-bottom: 3.2rem;
+}
+
 .pricing-feature-icon {
     color: var(--primary-color);
     width: 3.2rem;
     height: 3.2rem;
-    padding: 1.6rem;
-    background-color: var(--primary-color--tint-90);
-    margin-bottom: 3.2rem;
-    border-radius: 50%;
 }
 
 .pricing-feature-title {
@@ -655,8 +663,8 @@
 }
 
 .social-link-icon {
-    height: 2.4rem;
-    width: 2.4rem;
+    height: 3.2rem;
+    width: 3.2rem;
 }
 
 .copyright {
