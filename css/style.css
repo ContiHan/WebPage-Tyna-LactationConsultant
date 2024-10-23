@@ -417,9 +417,13 @@
     color: var(--secondary-color--shade-10);
 }
 
+.testimonial-container {
+    max-width: 136rem;
+}
+
 .testimonial-card-wrapper {
     margin: 0 6.4rem 3.2rem;
-    padding: 2.4rem 1.2rem;
+    padding: 0 2.4rem 2.4rem;
     overflow: hidden;
 }
 
