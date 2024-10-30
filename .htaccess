@@ -23,6 +23,11 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 Header set Content-Security-Policy "upgrade-insecure-requests;"
 
+# Přesměrování z www na non www
+RewriteCond %{HTTP_HOST} ^www\.lptyna\.cz [NC]
+RewriteRule ^(.*)$ https://lptyna.cz/$1 [R=301,L]
+
+
 # cele domeny (aliasy)
 
 RewriteCond %{REQUEST_URI} !^domains/
