@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulačka práce</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #9b85bd 0%, #78cdd0 100%);
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .auth-section {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .auth-btn {
+            background: #9b85bd;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-btn:hover {
+            background: #8c78aa;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #d7cee5;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #9b85bd;
+            box-shadow: 0 0 0 3px #f5f3f8;
+        }
+
+        .editable-rate-section {
+            background: #f5f3f8;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            border: 2px solid #d7cee5;
+        }
+
+        .rate-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .edit-btn {
+            background: #78cdd0;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: none;
+        }
+
+        .edit-btn:hover {
+            background: #6cb9bb;
+        }
+
+        .save-btn {
+            background: #dc933b;
+            margin-left: 8px;
+            display: inline-block;
+        }
+
+        .save-btn:hover {
+            background: #c68435;
+        }
+
+        .cancel-btn {
+            background: #888;
+            margin-left: 8px;
+            display: inline-block;
+        }
+
+        .cancel-btn:hover {
+            background: #767676;
+        }
+
+        .current-rate {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 12px;
+            align-items: end;
+        }
+
+        .input-group input {
+            flex: 1;
+        }
+
+        .time-input-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .time-input {
+            width: 80px !important;
+            text-align: center;
+        }
+
+        .time-separator {
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .time-format-toggle {
+            background: #f8e9d8;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-left: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .time-format-toggle:hover {
+            background: #e3a962;
+        }
+
+        .time-format-toggle.active {
+            background: #dc933b;
+            color: #fff;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            background: #dc933b;
+            color: #fff;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 24px 0;
+        }
+
+        .calculate-btn:hover {
+            background: #c68435;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 147, 59, 0.35);
+        }
+
+        .result {
+            background: #dc933b;
+            color: #fff;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 24px;
+            display: none;
+        }
+
+        .result h2 {
+            margin: 0 0 16px 0;
+            font-size: 24px;
+        }
+
+        .total-amount {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 16px 0;
+        }
+
+        .breakdown {
+            background: rgba(219, 147, 59, 0.35);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .breakdown-item:last-child {
+            margin-bottom: 0;
+            font-weight: 600;
+            border-top: 1px solid rgba(255, 255, 255, 0.95);
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+
+        .section-divider {
+            border-top: 2px solid #d7cee5;
+            margin: 32px 0 24px 0;
+            padding-top: 24px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(117, 117, 117, 0.3);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 32px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .modal input {
+            width: 100%;
+            padding: 12px;
+            margin: 16px 0;
+            border: 2px solid #d7cee5;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal-btn.primary {
+            background: #9b85bd;
+            color: #fff;
+        }
+
+        .modal-btn.primary:hover {
+            background: #8c78aa;
+        }
+
+        .modal-btn.secondary {
+            background: #d7cee5;
+            color: #555;
+        }
+
+        .modal-btn.secondary:hover {
+            background: #f5f3f8;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Kalkulačka práce</h1>
+
+    <div class="auth-section">
+        <button class="auth-btn" id="authBtn" onclick="toggleAuth()">Upravit ceny</button>
+    </div>
+
+    <!-- Cena za hodinu -->
+    <div class="editable-rate-section">
+        <div class="rate-header">
+            <label>Cena za hodinu:</label>
+            <button class="edit-btn" onclick="toggleEdit('hourly')">Upravit</button>
+        </div>
+        <div id="hourlyRateDisplay">
+            <div class="current-rate" id="currentHourlyRate">500 Kč/hod</div>
+        </div>
+        <div id="hourlyRateEdit" style="display: none;">
+            <div class="input-group">
+                <input type="number" id="hourlyRateInput" placeholder="Zadejte cenu za hodinu" step="1" min="0">
+                <button class="edit-btn save-btn" onclick="saveRate('hourly')">Uložit</button>
+                <button class="edit-btn cancel-btn" onclick="cancelEdit('hourly')">Zrušit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Poradna -->
+    <div class="form-group">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <label for="timeFormatBtn">Poradna:</label>
+            <button class="time-format-toggle active" id="timeFormatBtn" onclick="toggleTimeFormat()">
+                Desetinné
+            </button>
+        </div>
+        <div class="time-input-group" id="timeInputGroup">
+            <input type="number" id="hoursInput" class="time-input" placeholder="0" min="0" max="23">
+            <span class="time-separator">:</span>
+            <input type="number" id="minutesInput" class="time-input" placeholder="00" min="0" max="59" step="15">
+        </div>
+        <div id="decimalInput" style="display: none;">
+            <input type="number" id="decimalHours" placeholder="např. 1.5" step="0.1" min="0">
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Cestovné -->
+    <div class="editable-rate-section">
+        <div class="rate-header">
+            <label>Cena za km:</label>
+            <button class="edit-btn" onclick="toggleEdit('travel')">Upravit</button>
+        </div>
+        <div id="travelRateDisplay">
+            <div class="current-rate" id="currentTravelRate">5 Kč/km</div>
+        </div>
+        <div id="travelRateEdit" style="display: none;">
+            <div class="input-group">
+                <input type="number" id="travelRateInput" placeholder="Zadejte cenu za km" step="1" min="0">
+                <button class="edit-btn save-btn" onclick="saveRate('travel')">Uložit</button>
+                <button class="edit-btn cancel-btn" onclick="cancelEdit('travel')">Zrušit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="travel">Cestovné (km):</label>
+        <input type="number" id="travel" placeholder="Zadejte počet km" step="1" min="0">
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- Půjčovné -->
+    <div class="editable-rate-section">
+        <div class="rate-header">
+            <label>Cena za měsíc:</label>
+            <button class="edit-btn" onclick="toggleEdit('rental')">Upravit</button>
+        </div>
+        <div id="rentalRateDisplay">
+            <div class="current-rate" id="currentRentalRate">2000 Kč/měs</div>
+        </div>
+        <div id="rentalRateEdit" style="display: none;">
+            <div class="input-group">
+                <input type="number" id="rentalRateInput" placeholder="Zadejte cenu za měsíc" step="1" min="0">
+                <button class="edit-btn save-btn" onclick="saveRate('rental')">Uložit</button>
+                <button class="edit-btn cancel-btn" onclick="cancelEdit('rental')">Zrušit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="rental">Půjčovné (měsíce):</label>
+        <input type="number" id="rental" placeholder="Zadejte počet měsíců" step="1" min="0">
+    </div>
+
+    <button class="calculate-btn" onclick="calculateTotal()">
+        Vypočítat celkovou částku
+    </button>
+
+    <div class="result" id="result">
+        <h2>Výsledek výpočtu</h2>
+        <div class="total-amount" id="totalAmount">0 Kč</div>
+        <div class="breakdown" id="breakdown"></div>
+    </div>
+
+    <!-- Modal pro přihlášení -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <h2>Přihlášení</h2>
+            <p>Pro úpravu cen zadejte heslo:</p>
+            <input type="password" id="passwordInput" placeholder="Zadejte heslo">
+            <div class="modal-buttons">
+                <button class="modal-btn secondary" onclick="closeAuthModal()">Zrušit</button>
+                <button class="modal-btn primary" onclick="submitPassword()">Přihlásit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Výchozí sazby
+    let rates = {
+        hourly: 500,
+        travel: 5,
+        rental: 2000
+    };
+
+    let isTimeFormat = true;
+    let isAuthenticated = false;
+    const ADMIN_PASSWORD = "admin123"; // Změňte si heslo zde
+
+    function checkAuth() {
+        const savedAuth = localStorage.getItem('workCalcAuth');
+        if (savedAuth === 'true') {
+            isAuthenticated = true;
+            updateAuthUI();
+        }
+    }
+
+    function toggleAuth() {
+        console.log('toggleAuth called, current auth:', isAuthenticated);
+        if (isAuthenticated) {
+            // Odhlášení
+            isAuthenticated = false;
+            localStorage.removeItem('workCalcAuth');
+            updateAuthUI();
+            console.log('Logged out');
+        } else {
+            // Zobrazení modálu pro přihlášení
+            showAuthModal();
+        }
+    }
+
+    function showAuthModal() {
+        document.getElementById('authModal').style.display = 'block';
+        document.getElementById('passwordInput').focus();
+    }
+
+    function closeAuthModal() {
+        document.getElementById('authModal').style.display = 'none';
+        document.getElementById('passwordInput').value = '';
+    }
+
+    function submitPassword() {
+        const password = document.getElementById('passwordInput').value;
+        console.log('Password entered:', password ? 'yes' : 'no');
+
+        if (password === ADMIN_PASSWORD) {
+            isAuthenticated = true;
+            localStorage.setItem('workCalcAuth', 'true');
+            updateAuthUI();
+            closeAuthModal();
+            console.log('Logged in successfully');
+        } else {
+            alert('Nesprávné heslo!');
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('passwordInput').focus();
+        }
+    }
+
+    function updateAuthUI() {
+        const editButtons = document.querySelectorAll('.edit-btn');
+        const authBtn = document.getElementById('authBtn');
+
+        // Najdeme pouze tlačítka "Upravit" (ne Save/Cancel)
+        editButtons.forEach(btn => {
+            if (btn.textContent === 'Upravit') {
+                btn.style.display = isAuthenticated ? 'inline-block' : 'none';
+            }
+        });
+
+        if (isAuthenticated) {
+            authBtn.textContent = 'Odhlásit';
+            authBtn.style.background = '#888';
+        } else {
+            authBtn.textContent = 'Upravit ceny';
+            authBtn.style.background = '#9b85bd';
+        }
+    }
+
+    function loadSavedRates() {
+        // Pokus o načtení uložených cen z localStorage
+        try {
+            const savedRates = localStorage.getItem('workCalcRates');
+            if (savedRates) {
+                const parsedRates = JSON.parse(savedRates);
+                // Sloučení s výchozími hodnotami (pro případ nových položek)
+                rates = { ...rates, ...parsedRates };
+            }
+        } catch (e) {
+            console.log('Nepodařilo se načíst uložené ceny:', e);
+        }
+        updateRateDisplays();
+    }
+
+    function saveRatesToStorage() {
+        // Uložení cen do localStorage
+        try {
+            localStorage.setItem('workCalcRates', JSON.stringify(rates));
+        } catch (e) {
+            console.log('Nepodařilo se uložit ceny:', e);
+        }
+    }
+
+    function updateRateDisplays() {
+        document.getElementById('currentHourlyRate').textContent = rates.hourly + ' Kč/hod';
+        document.getElementById('currentTravelRate').textContent = rates.travel + ' Kč/km';
+        document.getElementById('currentRentalRate').textContent = rates.rental + ' Kč/měs';
+    }
+
+    function toggleEdit(type) {
+        console.log('toggleEdit called for:', type, 'auth:', isAuthenticated);
+        if (!isAuthenticated) {
+            alert('Pro úpravu cen se musíte přihlásit!');
+            return;
+        }
+        document.getElementById(type + 'RateDisplay').style.display = 'none';
+        document.getElementById(type + 'RateEdit').style.display = 'block';
+        document.getElementById(type + 'RateInput').value = rates[type];
+        document.getElementById(type + 'RateInput').focus();
+    }
+
+    function saveRate(type) {
+        const input = document.getElementById(type + 'RateInput');
+        const newRate = parseFloat(input.value);
+        if (newRate && newRate >= 0) {
+            rates[type] = newRate;
+            saveRatesToStorage(); // Uložení do localStorage
+            updateRateDisplays();
+            cancelEdit(type);
+        } else {
+            alert('Zadejte platnou cenu (nesmí být záporná)!');
+        }
+    }
+
+    function cancelEdit(type) {
+        document.getElementById(type + 'RateDisplay').style.display = 'block';
+        document.getElementById(type + 'RateEdit').style.display = 'none';
+    }
+
+    function toggleTimeFormat() {
+        isTimeFormat = !isTimeFormat;
+        const btn = document.getElementById('timeFormatBtn');
+        const timeInputs = document.getElementById('timeInputGroup');
+        const decimalInput = document.getElementById('decimalInput');
+
+        if (isTimeFormat) {
+            // Jsem v časovém formátu, tlačítko ukazuje "přepni na desetinné"
+            btn.textContent = 'Desetinné';
+            btn.classList.add('active');
+            timeInputs.style.display = 'flex';
+            decimalInput.style.display = 'none';
+        } else {
+            // Jsem v desetinném formátu, tlačítko ukazuje "přepni na časové"
+            btn.textContent = 'Čas (H:M)';
+            btn.classList.add('active');
+            timeInputs.style.display = 'none';
+            decimalInput.style.display = 'block';
+        }
+    }
+
+    function getHours() {
+        if (isTimeFormat) {
+            const hours = parseInt(document.getElementById('hoursInput').value) || 0;
+            const minutes = parseInt(document.getElementById('minutesInput').value) || 0;
+            return hours + (minutes / 60);
+        } else {
+            return parseFloat(document.getElementById('decimalHours').value) || 0;
+        }
+    }
+
+    function formatTimeDisplay(totalHours) {
+        if (totalHours === 0) return '';
+
+        const hours = Math.floor(totalHours);
+        const minutes = Math.round((totalHours - hours) * 60);
+
+        if (minutes === 0) {
+            return `${hours} hod`;
+        } else {
+            return `${hours}:${minutes.toString().padStart(2, '0')} hod`;
+        }
+    }
+
+    function calculateTotal() {
+        const hours = getHours();
+        const travel = parseFloat(document.getElementById('travel').value) || 0;
+        const rental = parseFloat(document.getElementById('rental').value) || 0;
+
+        const consultingFee = hours * rates.hourly;
+        const travelFee = travel * rates.travel;
+        const rentalFee = rental * rates.rental;
+        const total = consultingFee + travelFee + rentalFee;
+
+        // Zobrazení výsledku
+        document.getElementById('totalAmount').textContent =
+            new Intl.NumberFormat('cs-CZ').format(total) + ' Kč';
+
+        // Vytvoření rozpisu
+        let breakdown = '';
+        if (hours > 0) {
+            const timeDisplay = formatTimeDisplay(hours);
+            breakdown += `<div class="breakdown-item">
+                    <span>Poradna (${timeDisplay} × ${rates.hourly} Kč/hod)</span>
+                    <span>${new Intl.NumberFormat('cs-CZ').format(consultingFee)} Kč</span>
+                </div>`;
+        }
+        if (travel > 0) {
+            breakdown += `<div class="breakdown-item">
+                    <span>Cestovné (${travel} km × ${rates.travel} Kč/km)</span>
+                    <span>${new Intl.NumberFormat('cs-CZ').format(travelFee)} Kč</span>
+                </div>`;
+        }
+        if (rental > 0) {
+            breakdown += `<div class="breakdown-item">
+                    <span>Půjčovné (${rental} měs × ${rates.rental} Kč/měs)</span>
+                    <span>${new Intl.NumberFormat('cs-CZ').format(rentalFee)} Kč</span>
+                </div>`;
+        }
+        breakdown += `<div class="breakdown-item">
+                <span><strong>Celkem</strong></span>
+                <span><strong>${new Intl.NumberFormat('cs-CZ').format(total)} Kč</strong></span>
+            </div>`;
+
+        document.getElementById('breakdown').innerHTML = breakdown;
+        document.getElementById('result').style.display = 'block';
+
+        // Plynulé scroll k výsledku
+        document.getElementById('result').scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest'
+        });
+    }
+
+    // Načtení při startu
+    loadSavedRates();
+    checkAuth();
+
+    // Enter key pro výpočet a uložení
+    document.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && e.target.tagName === 'INPUT') {
+            if (e.target.id.includes('RateInput')) {
+                const type = e.target.id.replace('RateInput', '').toLowerCase();
+                saveRate(type);
+            } else if (e.target.id === 'passwordInput') {
+                submitPassword();
+            } else {
+                calculateTotal();
+            }
+        }
+    });
+
+    // Zavření modálu při kliknutí mimo něj
+    window.addEventListener('click', function(e) {
+        const modal = document.getElementById('authModal');
+        if (e.target === modal) {
+            closeAuthModal();
+        }
+    });
+
+    // Automatické doplnění minut na 15minutové intervaly
+    document.getElementById('minutesInput').addEventListener('input', function(e) {
+        let value = parseInt(e.target.value);
+        if (value > 59) {
+            e.target.value = 59;
+        }
+    });
+
+    // Automatické přepočítání při změně času
+    document.getElementById('hoursInput').addEventListener('input', function() {
+        if (document.getElementById('result').style.display === 'block') {
+            calculateTotal();
+        }
+    });
+
+    document.getElementById('minutesInput').addEventListener('input', function() {
+        if (document.getElementById('result').style.display === 'block') {
+            calculateTotal();
+        }
+    });
+
+    document.getElementById('decimalHours').addEventListener('input', function() {
+        if (document.getElementById('result').style.display === 'block') {
+            calculateTotal();
+        }
+    });
+</script>
+</body>
+</html>
