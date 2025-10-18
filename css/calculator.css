@@ -1,0 +1,459 @@
+/* ============================== */
+/* CALCULATOR PAGE STYLES */
+/* ============================== */
+
+.calculator-main {
+    padding: 9.6rem 0 6.4rem 0;
+    min-height: calc(100vh - 10rem);
+}
+
+.calculator-title {
+    text-align: center;
+    margin-bottom: 2.4rem;
+    color: var(--primary-color);
+}
+
+.calculator-subtitle {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 4.8rem;
+    line-height: 1.6;
+}
+
+.calculator-container {
+    max-width: 90rem;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+    overflow: hidden;
+}
+
+/* ============================== */
+/* CALCULATOR SECTIONS */
+/* ============================== */
+
+.calculator-section {
+    padding: 4.8rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.calculator-section:last-of-type {
+    border-bottom: none;
+}
+
+.calculator-section .heading-secondary {
+    font-size: 3rem;
+    margin-bottom: 3.2rem;
+    color: var(--primary-color);
+}
+
+/* ============================== */
+/* SERVICE ITEMS */
+/* ============================== */
+
+.service-item {
+    margin-bottom: 2.4rem;
+    padding: 2.4rem;
+    background-color: var(--primary-color--tint-90);
+    border-radius: 9px;
+    transition: all 0.3s;
+}
+
+.service-item:hover {
+    box-shadow: 0 1.2rem 2.4rem rgba(155, 133, 189, 0.15);
+    transform: translateY(-2px);
+}
+
+.service-item:last-child {
+    margin-bottom: 0;
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    cursor: pointer;
+}
+
+.service-checkbox {
+    width: 2.4rem;
+    height: 2.4rem;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.service-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+.service-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.service-base-price {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+/* ============================== */
+/* SERVICE INPUTS */
+/* ============================== */
+
+.service-inputs {
+    margin-top: 2.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--primary-color--tint-60);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-group {
+    margin-bottom: 1.6rem;
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.input-group label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Time input styling */
+.time-input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.time-input {
+    width: 8rem;
+    text-align: center;
+}
+
+.time-separator {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.input-field {
+    padding: 1.2rem 1.6rem;
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: #333;
+    border: 2px solid var(--primary-color--tint-60);
+    border-radius: 9px;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(155, 133, 189, 0.1);
+}
+
+.service-subtotal {
+    margin-top: 1.6rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--primary-color--tint-60);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: right;
+}
+
+.service-subtotal span {
+    font-size: 2rem;
+}
+
+/* ============================== */
+/* TOTAL SECTION */
+/* ============================== */
+
+.total-section {
+    padding: 4.8rem;
+    background: linear-gradient(
+        to bottom right,
+        var(--primary-color--tint-90),
+        var(--secondary-color--tint-90)
+    );
+    text-align: center;
+}
+
+.total-section .heading-secondary {
+    font-size: 3rem;
+    margin-bottom: 2.4rem;
+    color: var(--primary-color);
+}
+
+.total-price {
+    font-size: 5.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 3.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-reset {
+    padding: 1.6rem 3.2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: #fff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-reset:hover {
+    background-color: #8a6fa8;
+    transform: translateY(-2px);
+    box-shadow: 0 1rem 2rem rgba(155, 133, 189, 0.3);
+}
+
+.btn-reset:active {
+    transform: translateY(0);
+}
+
+/* ============================== */
+/* FOOTER */
+/* ============================== */
+
+.footer {
+    background-color: var(--primary-color--tint-90);
+    padding: 3.2rem 0;
+    margin-top: auto;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #666;
+}
+
+/* ============================== */
+/* RESPONSIVE */
+/* ============================== */
+
+@media (max-width: 768px) {
+    .calculator-main {
+        padding: 6.4rem 0 4.8rem 0;
+    }
+
+    .calculator-section {
+        padding: 3.2rem 2.4rem;
+    }
+
+    .calculator-title {
+        font-size: 3.6rem;
+    }
+
+    .calculator-subtitle {
+        font-size: 1.6rem;
+        padding: 0 2.4rem;
+    }
+
+    .service-label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .input-group {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .total-section {
+        padding: 3.2rem 2.4rem;
+    }
+
+    .total-price {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-main {
+        padding: 4.8rem 0 3.2rem 0;
+    }
+
+    .calculator-container {
+        border-radius: 0;
+    }
+
+    .calculator-section {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .calculator-title {
+        font-size: 2.8rem;
+        padding: 0 1.6rem;
+    }
+
+    .calculator-subtitle {
+        font-size: 1.4rem;
+        padding: 0 1.6rem;
+        margin-bottom: 3.2rem;
+    }
+
+    .service-item {
+        padding: 1.6rem 1.2rem;
+    }
+
+    .service-checkbox {
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+    }
+
+    .service-header {
+        gap: 1.2rem;
+    }
+
+    .service-label {
+        font-size: 1.5rem;
+        gap: 0.8rem;
+    }
+
+    .service-name {
+        font-size: 1.5rem;
+    }
+
+    .service-base-price {
+        font-size: 1.3rem;
+    }
+
+    .input-group {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .input-group label {
+        font-size: 1.4rem;
+    }
+
+    .input-field {
+        padding: 1rem 1.2rem;
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    /* Time input responsive */
+    .time-input-group {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .time-input {
+        width: 7rem;
+        padding: 1rem 0.8rem;
+        font-size: 1.5rem;
+    }
+
+    .time-separator {
+        font-size: 1.4rem;
+    }
+
+    .service-subtotal {
+        font-size: 1.6rem;
+        margin-top: 1.2rem;
+        padding-top: 1.2rem;
+    }
+
+    .service-subtotal span {
+        font-size: 1.8rem;
+    }
+
+    .total-section {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .total-section .heading-secondary {
+        font-size: 2.4rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .total-price {
+        font-size: 3.2rem;
+        margin-bottom: 2.4rem;
+    }
+
+    .btn-reset {
+        padding: 1.4rem 2.4rem;
+        font-size: 1.6rem;
+        width: 100%;
+    }
+}
+
+/* Extra small devices (360px and below) */
+@media (max-width: 360px) {
+    .calculator-title {
+        font-size: 2.4rem;
+    }
+
+    .calculator-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .service-item {
+        padding: 1.2rem 1rem;
+    }
+
+    .service-label {
+        font-size: 1.4rem;
+    }
+
+    .service-name {
+        font-size: 1.4rem;
+    }
+
+    .service-base-price {
+        font-size: 1.2rem;
+    }
+
+    .time-input {
+        width: 6.5rem;
+        font-size: 1.4rem;
+    }
+
+    .input-field {
+        font-size: 1.4rem;
+        padding: 0.9rem 1rem;
+    }
+
+    .total-price {
+        font-size: 2.8rem;
+    }
+
+    .btn-reset {
+        font-size: 1.5rem;
+        padding: 1.2rem 2rem;
+    }
+}
