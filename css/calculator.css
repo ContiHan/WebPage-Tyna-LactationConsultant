@@ -140,6 +140,18 @@
     color: #555;
 }
 
+/* Hidden input groups styling */
+.input-group[style*="display: none"] {
+    display: none !important;
+}
+
+.input-group[style*="display: block"] {
+    display: grid !important;
+    grid-template-columns: 20rem 1fr;
+    align-items: center;
+    gap: 1.6rem;
+}
+
 /* Time input styling */
 .time-input-group {
     display: flex;
@@ -285,6 +297,13 @@
     }
 
     .input-group {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    /* Override for hidden input groups on tablets */
+    .input-group[style*="display: block"] {
+        display: grid !important;
         grid-template-columns: 1fr;
         gap: 0.8rem;
     }

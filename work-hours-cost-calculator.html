@@ -24,216 +24,305 @@
     <meta name="description" content="Kalkulačka pro výpočet ceny laktačních a poradenských služeb">
 </head>
 <body>
-    <main class="calculator-main">
-        <div class="container">
-            <h1 class="heading-primary calculator-title">Kalkulačka ceny služeb</h1>
-            <p class="calculator-subtitle">Vyberte poskytnuté služby a zadejte potřebné hodnoty pro výpočet celkové ceny</p>
+<main class="calculator-main">
+    <div class="container">
+        <h1 class="heading-primary calculator-title">Kalkulačka ceny služeb</h1>
+        <p class="calculator-subtitle">Vyberte poskytnuté služby a zadejte potřebné hodnoty pro výpočet celkové ceny</p>
 
-            <div class="calculator-container">
-                <!-- Hlavní služby -->
-                <section class="calculator-section">
-                    <h2 class="heading-secondary">Hlavní služby</h2>
+        <div class="calculator-container">
+            <!-- Hlavní služby -->
+            <section class="calculator-section">
+                <h2 class="heading-secondary">Hlavní služby</h2>
 
-                    <!-- Konzultace doma -->
-                    <div class="service-item">
-                        <div class="service-header">
-                            <input type="checkbox" id="konzultace-doma" class="service-checkbox">
-                            <label for="konzultace-doma" class="service-label">
-                                <span class="service-name">Konzultace u Vás doma</span>
-                                <span class="service-base-price">700 Kč/hod + 8 Kč/km</span>
-                            </label>
-                        </div>
-                        <div class="service-inputs" id="inputs-konzultace-doma" style="display: none;">
-                            <div class="input-group">
-                                <label for="hodiny-doma">Čas konzultace:</label>
-                                <div class="time-input-group">
-                                    <input type="number" id="hodiny-doma" min="0" max="23" value="1" class="input-field time-input">
-                                    <span class="time-separator">h</span>
-                                    <select id="minuty-doma" class="input-field time-input">
-                                        <option value="0">00</option>
-                                        <option value="15">15</option>
-                                        <option value="30">30</option>
-                                        <option value="45">45</option>
-                                    </select>
-                                    <span class="time-separator">min</span>
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <label for="km-doma">Vzdálenost (km):</label>
-                                <input type="number" id="km-doma" min="0" step="1" value="0" class="input-field">
-                            </div>
-                            <div class="service-subtotal">Mezisoučet: <span id="subtotal-doma">0 Kč</span></div>
-                        </div>
+                <!-- Konzultace doma -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <input type="checkbox" id="konzultace-doma" class="service-checkbox">
+                        <label for="konzultace-doma" class="service-label">
+                            <span class="service-name">Konzultace u Vás doma</span>
+                            <span class="service-base-price">700 Kč/hod + 8 Kč/km</span>
+                        </label>
                     </div>
-
-                    <!-- Konzultace online -->
-                    <div class="service-item">
-                        <div class="service-header">
-                            <input type="checkbox" id="konzultace-online" class="service-checkbox">
-                            <label for="konzultace-online" class="service-label">
-                                <span class="service-name">Konzultace on-line</span>
-                                <span class="service-base-price">700 Kč/hod</span>
-                            </label>
-                        </div>
-                        <div class="service-inputs" id="inputs-konzultace-online" style="display: none;">
-                            <div class="input-group">
-                                <label for="hodiny-online">Čas konzultace:</label>
-                                <div class="time-input-group">
-                                    <input type="number" id="hodiny-online" min="0" max="23" value="1" class="input-field time-input">
-                                    <span class="time-separator">h</span>
-                                    <select id="minuty-online" class="input-field time-input">
-                                        <option value="0">00</option>
-                                        <option value="15">15</option>
-                                        <option value="30">30</option>
-                                        <option value="45">45</option>
-                                    </select>
-                                    <span class="time-separator">min</span>
-                                </div>
-                            </div>
-                            <div class="service-subtotal">Mezisoučet: <span id="subtotal-online">0 Kč</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Předporodní příprava -->
-                    <div class="service-item">
-                        <div class="service-header">
-                            <input type="checkbox" id="predporodni-priprava" class="service-checkbox">
-                            <label for="predporodni-priprava" class="service-label">
-                                <span class="service-name">Předporodní příprava na kojení</span>
-                                <span class="service-base-price">1950 Kč/pár + 8 Kč/km (osobní)</span>
-                            </label>
-                        </div>
-                        <div class="service-inputs" id="inputs-predporodni-priprava" style="display: none;">
-                            <div class="input-group">
-                                <label for="typ-predporodni">Typ konzultace:</label>
-                                <select id="typ-predporodni" class="input-field">
-                                    <option value="online">Online (bez cestovného)</option>
-                                    <option value="osobni">Osobní (s cestovným)</option>
+                    <div class="service-inputs" id="inputs-konzultace-doma" style="display: none;">
+                        <div class="input-group">
+                            <label for="hodiny-doma">Čas konzultace:</label>
+                            <div class="time-input-group">
+                                <select id="hodiny-doma" class="input-field time-input">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
                                 </select>
-                            </div>
-                            <div class="input-group" id="km-predporodni-group" style="display: none;">
-                                <label for="km-predporodni">Vzdálenost (km):</label>
-                                <input type="number" id="km-predporodni" min="0" step="1" value="0" class="input-field">
-                            </div>
-                            <div class="service-subtotal">Mezisoučet: <span id="subtotal-predporodni">0 Kč</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Odstav s respektem -->
-                    <div class="service-item">
-                        <div class="service-header">
-                            <input type="checkbox" id="odstav" class="service-checkbox">
-                            <label for="odstav" class="service-label">
-                                <span class="service-name">Odstav s respektem</span>
-                                <span class="service-base-price">1690 Kč + 8 Kč/km (osobní)</span>
-                            </label>
-                        </div>
-                        <div class="service-inputs" id="inputs-odstav" style="display: none;">
-                            <div class="input-group">
-                                <label for="typ-odstav">Typ konzultace:</label>
-                                <select id="typ-odstav" class="input-field">
-                                    <option value="online">Online (bez cestovného)</option>
-                                    <option value="osobni">Osobní (s cestovným)</option>
+                                <span class="time-separator">h</span>
+                                <select id="minuty-doma" class="input-field time-input">
+                                    <option value="0">00</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
                                 </select>
+                                <span class="time-separator">min</span>
                             </div>
-                            <div class="input-group" id="km-odstav-group" style="display: none;">
-                                <label for="km-odstav">Vzdálenost (km):</label>
-                                <input type="number" id="km-odstav" min="0" step="1" value="0" class="input-field">
-                            </div>
-                            <div class="service-subtotal">Mezisoučet: <span id="subtotal-odstav">0 Kč</span></div>
                         </div>
+                        <div class="input-group">
+                            <label for="km-doma">Vzdálenost (km):</label>
+                            <input type="number" id="km-doma" min="0" step="1" placeholder="0" class="input-field">
+                        </div>
+                        <div class="service-subtotal">Mezisoučet: <span id="subtotal-doma">0 Kč</span></div>
                     </div>
-                </section>
-
-                <!-- Doplňkové služby -->
-                <section class="calculator-section">
-                    <h2 class="heading-secondary">Doplňkové služby</h2>
-
-                    <!-- Stříbrný klobouček -->
-                    <div class="service-item">
-                        <div class="service-header">
-                            <input type="checkbox" id="stribrny-kloboucek" class="service-checkbox">
-                            <label for="stribrny-kloboucek" class="service-label">
-                                <span class="service-name">Stříbrný klobouček (pronájem)</span>
-                                <span class="service-base-price">300 Kč/týden</span>
-                            </label>
-                        </div>
-                        <div class="service-inputs" id="inputs-stribrny-kloboucek" style="display: none;">
-                            <div class="input-group">
-                                <label for="tydny-kloboucek">Počet týdnů:</label>
-                                <input type="number" id="tydny-kloboucek" min="1" step="1" value="1" class="input-field">
-                            </div>
-                            <div class="service-subtotal">Mezisoučet: <span id="subtotal-kloboucek">0 Kč</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Nosítko -->
-                    <div class="service-item">
-                        <div class="service-header">
-                            <input type="checkbox" id="nositko" class="service-checkbox">
-                            <label for="nositko" class="service-label">
-                                <span class="service-name">Nosítko (pronájem)</span>
-                                <span class="service-base-price">600 Kč/měsíc</span>
-                            </label>
-                        </div>
-                        <div class="service-inputs" id="inputs-nositko" style="display: none;">
-                            <div class="input-group">
-                                <label for="mesice-nositko">Počet měsíců:</label>
-                                <input type="number" id="mesice-nositko" min="1" step="1" value="1" class="input-field">
-                            </div>
-                            <div class="service-subtotal">Mezisoučet: <span id="subtotal-nositko">0 Kč</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Šátek -->
-                    <div class="service-item">
-                        <div class="service-header">
-                            <input type="checkbox" id="satek" class="service-checkbox">
-                            <label for="satek" class="service-label">
-                                <span class="service-name">Šátek (pronájem)</span>
-                                <span class="service-base-price">400 Kč/měsíc</span>
-                            </label>
-                        </div>
-                        <div class="service-inputs" id="inputs-satek" style="display: none;">
-                            <div class="input-group">
-                                <label for="mesice-satek">Počet měsíců:</label>
-                                <input type="number" id="mesice-satek" min="1" step="1" value="1" class="input-field">
-                            </div>
-                            <div class="service-subtotal">Mezisoučet: <span id="subtotal-satek">0 Kč</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Esenciální olej -->
-                    <div class="service-item">
-                        <div class="service-header">
-                            <input type="checkbox" id="olej" class="service-checkbox">
-                            <label for="olej" class="service-label">
-                                <span class="service-name">Esenciální levandulový olej</span>
-                                <span class="service-base-price">200 Kč/2 ml</span>
-                            </label>
-                        </div>
-                        <div class="service-inputs" id="inputs-olej" style="display: none;">
-                            <div class="input-group">
-                                <label for="ks-olej">Počet kusů (2 ml):</label>
-                                <input type="number" id="ks-olej" min="1" step="1" value="1" class="input-field">
-                            </div>
-                            <div class="service-subtotal">Mezisoučet: <span id="subtotal-olej">0 Kč</span></div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Celková cena -->
-                <div class="total-section">
-                    <h2 class="heading-secondary">Celková cena</h2>
-                    <div class="total-price" id="total-price">0 Kč</div>
-                    <button class="btn-reset" id="btn-reset">Resetovat kalkulačku</button>
                 </div>
+
+                <!-- Konzultace online -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <input type="checkbox" id="konzultace-online" class="service-checkbox">
+                        <label for="konzultace-online" class="service-label">
+                            <span class="service-name">Konzultace on-line</span>
+                            <span class="service-base-price">700 Kč/hod</span>
+                        </label>
+                    </div>
+                    <div class="service-inputs" id="inputs-konzultace-online" style="display: none;">
+                        <div class="input-group">
+                            <label for="hodiny-online">Čas konzultace:</label>
+                            <div class="time-input-group">
+                                <select id="hodiny-online" class="input-field time-input">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <span class="time-separator">h</span>
+                                <select id="minuty-online" class="input-field time-input">
+                                    <option value="0">00</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
+                                </select>
+                                <span class="time-separator">min</span>
+                            </div>
+                        </div>
+                        <div class="service-subtotal">Mezisoučet: <span id="subtotal-online">0 Kč</span></div>
+                    </div>
+                </div>
+
+                <!-- Předporodní příprava -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <input type="checkbox" id="predporodni-priprava" class="service-checkbox">
+                        <label for="predporodni-priprava" class="service-label">
+                            <span class="service-name">Předporodní příprava na kojení</span>
+                            <span class="service-base-price">1950 Kč/pár + 8 Kč/km (osobní)</span>
+                        </label>
+                    </div>
+                    <div class="service-inputs" id="inputs-predporodni-priprava" style="display: none;">
+                        <div class="input-group">
+                            <label for="typ-predporodni">Typ konzultace:</label>
+                            <select id="typ-predporodni" class="input-field">
+                                <option value="online">Online (bez cestovného)</option>
+                                <option value="osobni">Osobní (s cestovným)</option>
+                            </select>
+                        </div>
+                        <div class="input-group" id="km-predporodni-group" style="display: none;">
+                            <label for="km-predporodni">Vzdálenost (km):</label>
+                            <input type="number" id="km-predporodni" min="0" step="1" placeholder="0"
+                                   class="input-field">
+                        </div>
+                        <div class="service-subtotal">Mezisoučet: <span id="subtotal-predporodni">0 Kč</span></div>
+                    </div>
+                </div>
+
+                <!-- Odstav s respektem -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <input type="checkbox" id="odstav" class="service-checkbox">
+                        <label for="odstav" class="service-label">
+                            <span class="service-name">Odstav s respektem</span>
+                            <span class="service-base-price">1690 Kč + 8 Kč/km (osobní)</span>
+                        </label>
+                    </div>
+                    <div class="service-inputs" id="inputs-odstav" style="display: none;">
+                        <div class="input-group">
+                            <label for="typ-odstav">Typ konzultace:</label>
+                            <select id="typ-odstav" class="input-field">
+                                <option value="online">Online (bez cestovného)</option>
+                                <option value="osobni">Osobní (s cestovným)</option>
+                            </select>
+                        </div>
+                        <div class="input-group" id="km-odstav-group" style="display: none;">
+                            <label for="km-odstav">Vzdálenost (km):</label>
+                            <input type="number" id="km-odstav" min="0" step="1" placeholder="0" class="input-field">
+                        </div>
+                        <div class="service-subtotal">Mezisoučet: <span id="subtotal-odstav">0 Kč</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Doplňkové služby -->
+            <section class="calculator-section">
+                <h2 class="heading-secondary">Doplňkové služby</h2>
+
+                <!-- Stříbrný klobouček -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <input type="checkbox" id="stribrny-kloboucek" class="service-checkbox">
+                        <label for="stribrny-kloboucek" class="service-label">
+                            <span class="service-name">Stříbrný klobouček (pronájem)</span>
+                            <span class="service-base-price">300 Kč/týden</span>
+                        </label>
+                    </div>
+                    <div class="service-inputs" id="inputs-stribrny-kloboucek" style="display: none;">
+                        <div class="input-group">
+                            <label for="tydny-kloboucek">Počet týdnů:</label>
+                            <select id="tydny-kloboucek" class="input-field">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                            </select>
+                        </div>
+                        <div class="service-subtotal">Mezisoučet: <span id="subtotal-kloboucek">0 Kč</span></div>
+                    </div>
+                </div>
+
+                <!-- Nosítko -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <input type="checkbox" id="nositko" class="service-checkbox">
+                        <label for="nositko" class="service-label">
+                            <span class="service-name">Nosítko (pronájem)</span>
+                            <span class="service-base-price">600 Kč/měsíc</span>
+                        </label>
+                    </div>
+                    <div class="service-inputs" id="inputs-nositko" style="display: none;">
+                        <div class="input-group">
+                            <label for="mesice-nositko">Počet měsíců:</label>
+                            <select id="mesice-nositko" class="input-field">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="service-subtotal">Mezisoučet: <span id="subtotal-nositko">0 Kč</span></div>
+                    </div>
+                </div>
+
+                <!-- Šátek -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <input type="checkbox" id="satek" class="service-checkbox">
+                        <label for="satek" class="service-label">
+                            <span class="service-name">Šátek (pronájem)</span>
+                            <span class="service-base-price">400 Kč/měsíc</span>
+                        </label>
+                    </div>
+                    <div class="service-inputs" id="inputs-satek" style="display: none;">
+                        <div class="input-group">
+                            <label for="mesice-satek">Počet měsíců:</label>
+                            <select id="mesice-satek" class="input-field">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="service-subtotal">Mezisoučet: <span id="subtotal-satek">0 Kč</span></div>
+                    </div>
+                </div>
+
+                <!-- Esenciální olej -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <input type="checkbox" id="olej" class="service-checkbox">
+                        <label for="olej" class="service-label">
+                            <span class="service-name">Esenciální levandulový olej</span>
+                            <span class="service-base-price">200 Kč/2 ml</span>
+                        </label>
+                    </div>
+                    <div class="service-inputs" id="inputs-olej" style="display: none;">
+                        <div class="input-group">
+                            <label for="ks-olej">Počet kusů (2 ml):</label>
+                            <select id="ks-olej" class="input-field">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="service-subtotal">Mezisoučet: <span id="subtotal-olej">0 Kč</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Celková cena -->
+            <div class="total-section">
+                <h2 class="heading-secondary">Celková cena</h2>
+                <div class="total-price" id="total-price">0 Kč</div>
+                <button class="btn-reset" id="btn-reset">Resetovat kalkulačku</button>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <script src="js/prices-config.js"></script>
-    <script src="js/calculator.js"></script>
+<script src="js/prices-config.js"></script>
+<script src="js/calculator.js"></script>
 </body>
 </html>
 
