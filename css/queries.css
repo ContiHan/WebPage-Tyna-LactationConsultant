@@ -299,11 +299,12 @@ Instead, 1rem = 1em = 16px
 
     .header {
         height: 7rem;
+        align-items: center;
     }
 
     .logo {
         height: 9rem;
-        transform: translateY(1rem);
+        transform: translateY(1.2rem);
     }
 
     /* EXACTLY matching heights and positions for phones */
@@ -313,7 +314,13 @@ Instead, 1rem = 1em = 16px
 
     .sticky .logo {
         height: 9rem;
-        transform: translateY(1rem);
+        transform: translateY(1.2rem);
+    }
+
+    .btn-mobile-nav {
+        display: block;
+        /* Ensure it's centered within the 7rem header height */
+        transform: translateY(0.2rem);
     }
 
     .section-hero {
