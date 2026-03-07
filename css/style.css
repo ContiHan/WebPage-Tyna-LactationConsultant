@@ -822,12 +822,13 @@
 }
 
 .grid-footer {
-    grid-template-columns: 1fr 1.5fr 1.5fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
 }
 
 .footer-logo-col {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .footer-heading {
@@ -838,11 +839,12 @@
 
 .footer-logo {
     display: block;
-    margin-bottom: 2.4rem;
+    margin-bottom: 3.2rem;
 }
 
 .footer-logo .logo {
     height: 9.6rem;
+    transform: none;
 }
 
 .social-links {
