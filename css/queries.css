@@ -67,6 +67,25 @@ Instead, 1rem = 1em = 16px
         font-size: 50%;
     }
 
+    .header {
+        height: 8rem;
+    }
+
+    .logo {
+        height: 12rem;
+        transform: translateY(1.2rem);
+    }
+
+    /* EXACTLY matching heights and positions for tablets */
+    .sticky {
+        height: 8rem;
+    }
+
+    .sticky .logo {
+        height: 12rem;
+        transform: translateY(1.2rem);
+    }
+
     .hero {
         grid-template-columns: 1fr;
         padding: 0 8rem;
@@ -87,8 +106,22 @@ Instead, 1rem = 1em = 16px
         margin-top: 3.2rem;
     }
 
+    .featured-img-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 3.2rem;
+    }
+
     .featured-img {
         height: 8rem;
+        filter: grayscale(0);
+        opacity: 100%;
+    }
+
+    .featured-text {
+        opacity: 1;
+        transform: translateY(0);
+        font-size: 1.6rem;
     }
 
     .pricing-card {
@@ -97,6 +130,10 @@ Instead, 1rem = 1em = 16px
 
     .grid--4-cols {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faq-list {
+        max-width: 70rem;
     }
 
     .cta {
@@ -268,15 +305,26 @@ Instead, 1rem = 1em = 16px
     }
 
     .header {
-        height: 10.6rem;
+        height: 7rem;
     }
 
     .logo {
-        height: 10.2rem;
+        height: 9rem;
+        transform: translateY(1rem);
+    }
+
+    /* EXACTLY matching heights and positions for phones */
+    .sticky {
+        height: 7rem;
+    }
+
+    .sticky .logo {
+        height: 9rem;
+        transform: translateY(1rem);
     }
 
     .section-hero {
-        padding: 2.4rem 0 6.4rem;
+        padding: 4.8rem 0 6.4rem;
     }
 
     .hero {
@@ -301,6 +349,15 @@ Instead, 1rem = 1em = 16px
 
     .offer-img-box::before {
         width: 64%;
+    }
+
+    .featured-img-box {
+        grid-template-columns: 1fr;
+        gap: 4.8rem;
+    }
+
+    .featured-img {
+        height: 9.6rem;
     }
 
     .pricing-card {

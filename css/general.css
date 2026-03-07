@@ -44,6 +44,7 @@ Paragraph L: 1.8
 */
 :root {
     --primary-color--tint-90: #f5f3f8;
+    --primary-color--tint-90--alpha97: rgba(245, 243, 248, 0.97);
     --primary-color--tint-60: #d7cee5;
 
     --secondary-color--tint-90: #f2fafa;

@@ -44,12 +44,92 @@
                 "streetAddress": "Staré Nechanice 216",
                 "addressCountry": "CZ"
             },
-            "description": "Laktační poradkyně Týna z Královéhradeckého kraje nabízí odbornou podporu při kojení, psychickou podporu a poradenství pro maminky.",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 50.237222,
+                "longitude": 15.623611
+            },
+            "areaServed": [
+                {
+                    "@type": "City",
+                    "name": "Hradec Králové"
+                },
+                {
+                    "@type": "City",
+                    "name": "Nechanice"
+                },
+                {
+                    "@type": "City",
+                    "name": "Hořice"
+                },
+                {
+                    "@type": "City",
+                    "name": "Nový Bydžov"
+                },
+                {
+                    "@type": "City",
+                    "name": "Jaroměř"
+                },
+                {
+                    "@type": "AdministrativeArea",
+                    "name": "Královéhradecký kraj"
+                }
+            ],
+            "description": "Laktační poradkyně Týna nabízí odbornou podporu při kojení, psychickou pomoc a poradenství pro maminky v Hradci Králové a okolí.",
             "telephone": "+420732281867",
             "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 06:00-22:00",
             "url": "https://www.lptyna.cz",
             "priceRange": "CZK 0 - 1950",
-            "image": "https://lptyna.cz/img/portrait/tyna-portrait.jpg"
+            "image": "https://lptyna.cz/img/portrait/tyna-portrait.jpg",
+            "knowsAbout": [
+                "Kojení",
+                "Laktační poradenství",
+                "Kontaktní rodičovství",
+                "Nošení dětí",
+                "Předporodní příprava"
+            ]
+        }
+    </script>
+
+    <!-- FAQ Schema for AI Overviews -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Jak probíhá laktační konzultace u mě doma?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Osobní návštěva trvá obvykle 60–90 minut. V klidu probereme vaše potřeby, zkontrolujeme techniku kojení a nastavíme praktické kroky pro vaši spokojenost. Součástí je i následná podpora na telefonu."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Dojíždíte i mimo Nechanice?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ano, jezdím za maminkami do Hradce Králové, Hořic, Nového Bydžova, Jaroměře a dalších obcí v Královéhradeckém kraji. Cestovné účtuji 8 Kč/km."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Je online konzultace stejně efektivní jako osobní?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Mnoho situací lze vyřešit i na dálku. Online konzultace je skvělá pro rychlou krizovou podporu nebo konzultaci teoretických otázek. Pro nácvik techniky kojení u novorozenců však doporučuji spíše osobní návštěvu."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Půjčujete i ergonomická nosítka nebo šátky?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ano, v rámci mých služeb nabízím pronájem ergonomických nosítek, šátků i stříbrných kloboučků na hojení bradavek. Ráda vás také naučím, jak je správně používat."
+                    }
+                }
+            ]
         }
     </script>
 
@@ -99,6 +179,8 @@
     <script defer src="js/script.js"></script>
     <script defer src="js/prices-config.js"></script>
     <script defer src="js/index-prices.js"></script>
+    <script defer src="js/faq-config.js"></script>
+    <script defer src="js/faq-renderer.js"></script>
 </head>
 <body>
 <header class="header">
@@ -110,6 +192,7 @@
             <li><a class="main-nav-link" href="#offer">Služby</a></li>
             <li><a class="main-nav-link" href="#pricing">Ceník</a></li>
             <li><a class="main-nav-link" href="#testimonials">Recenze</a></li>
+            <li><a class="main-nav-link" href="#faq">FAQ</a></li>
             <li><a class="main-nav-link nav-cta" href="#cta">Napiš mi</a></li>
         </ul>
     </nav>
@@ -165,14 +248,22 @@
         <div class="container">
             <h2 class="heading-featured">Absolvovala jsem</h2>
             <div class="featured-img-box">
-                <img alt="3. lékařská fakulta - diplom - Bc. titul" class="featured-img" src="img/logos/bc-logo.png"
-                />
-                <img alt="Ústav sv. Jana Nepomuka - diplom - Mgr. titul" class="featured-img"
-                     src="img/logos/mgr-logo.png"/>
-                <img alt="Pro klidné kojení - kurz - certifikát" class="featured-img"
-                     src="img/logos/pro-klidne-kojeni-logo.png"/>
-                <img alt="Předporodní příprava - kurz - certifikát" class="featured-img"
-                     src="img/logos/predporodni-priprava-logo.png"/>
+                <div class="featured-item">
+                    <img alt="3. lékařská fakulta - diplom - Bc. titul" class="featured-img" src="img/logos/bc-logo.png" />
+                    <p class="featured-text">Bc. Veřejné zdravotnictví</p>
+                </div>
+                <div class="featured-item">
+                    <img alt="Ústav sv. Jana Nepomuka - diplom - Mgr. titul" class="featured-img" src="img/logos/mgr-logo.png"/>
+                    <p class="featured-text">Mgr. Veřejné zdravotnictví</p>
+                </div>
+                <div class="featured-item">
+                    <img alt="Pro klidné kojení - kurz - certifikát" class="featured-img" src="img/logos/pro-klidne-kojeni-logo.png"/>
+                    <p class="featured-text">Certifikovaná LP</p>
+                </div>
+                <div class="featured-item">
+                    <img alt="Předporodní příprava - kurz - certifikát" class="featured-img" src="img/logos/predporodni-priprava-logo.png"/>
+                    <p class="featured-text">Předporodní příprava</p>
+                </div>
             </div>
         </div>
     </section>
@@ -181,12 +272,12 @@
         <div class="container">
             <span class="section-subtitle bio-subtitle">Kdo jsem</span>
             <h2 class="heading-secondary">
-                Osobní příběh a odborné zkušenosti
+                Laktační poradkyně pro Hradec Králové a okolí
             </h2>
         </div>
         <div class="container bio grid--center-v">
             <div class="bio-img-box">
-                <img alt="Kristýna Čepelková se svým mužem a svými dvěma dětmi." class="bio-img" src="img/bio/bio.jpg"
+                <img alt="Laktační poradkyně Kristýna Čepelková se svou rodinou v Královéhradeckém kraji" class="bio-img" src="img/bio/bio.jpg"
                 />
             </div>
             <div class="bio-text-box">
@@ -233,7 +324,7 @@
         <div class="container">
             <span class="section-subtitle offer-subtitle">Co nabízím</span>
             <h2 class="heading-secondary">
-                Všechno ke spokojenému miminku
+                Laktační poradenství a podpora rodiny
             </h2>
         </div>
         <div class="container grid grid--2-cols grid--center-v">
@@ -241,7 +332,7 @@
             <!-- Offer 1-->
             <div class="offer-text-box">
                 <h3 class="heading-tertiary">
-                    Krizová podpora
+                    Krizová telefonická podpora
                 </h3>
                 <p class="offer-description">
                     Každá z nás potřebuje někdy někoho, kdo ji vyslechne.
@@ -251,17 +342,17 @@
             </div>
             <div class="offer-img-box">
                 <img class="offer-img" src="img/offers/krizova-podpora-offer.jpg"
-                     alt="Osoba s telefonem v ruce a notebookem na klíně"/>
+                     alt="Laktační poradkyně na telefonu poskytující krizovou intervenci"/>
             </div>
 
             <!-- Offer 2-->
             <div class="offer-img-box">
                 <img class="offer-img" src="img/offers/konzultace-doma-offer.jpg"
-                     alt="Žena, muž a dítě odpočívající na gauči"/>
+                     alt="Osobní laktační konzultace v domácím prostředí maminky"/>
             </div>
             <div class="offer-text-box">
                 <h3 class="heading-tertiary">
-                    Individuální konzultace U VÁS DOMA
+                    Individuální konzultace u Vás doma
                 </h3>
                 <p class="offer-description">
                     V pohodlí Vašeho domova společně probereme všechny Vaše otázky a obavy týkající se nejen kojení.
@@ -276,7 +367,7 @@
             <!-- Offer 3-->
             <div class="offer-text-box">
                 <h3 class="heading-tertiary">
-                    Individuální konzultace ON-LINE
+                    Online laktační poradenství
                 </h3>
                 <p class="offer-description">
                     On-line schůzkou se dá vyřešit mnoho jednoduchých překážek
@@ -287,13 +378,13 @@
             </div>
             <div class="offer-img-box">
                 <img class="offer-img" src="img/offers/konzultace-online-offer.jpg"
-                     alt="Žena s dítětem v náručí a s notebookem na stole"/>
+                     alt="Maminka s miminkem během online konzultace s laktační poradkyní"/>
             </div>
 
             <!-- Offer 4-->
             <div class="offer-img-box">
                 <img class="offer-img" src="img/offers/predporodni-priprava-offer.jpg"
-                     alt="Lidský pár, ukazující pozitivní těhotenský test"/>
+                     alt="Příprava na kojení a porod pro budoucí rodiče"/>
             </div>
             <div class="offer-text-box">
                 <h3 class="heading-tertiary">
@@ -311,7 +402,7 @@
             <!-- Offer 5-->
             <div class="offer-text-box">
                 <h3 class="heading-tertiary">
-                    Odstav s respektem by Eva Labič
+                    Odstav s respektem (Eva Labič)
                 </h3>
                 <p class="offer-description">
                     Pokud hledáte způsob, jak naopak kojení ukončit &mdash; i s tím Vám velmi ráda pomohu.
@@ -321,17 +412,17 @@
             </div>
             <div class="offer-img-box">
                 <img class="offer-img" src="img/offers/odstav-offer.jpg"
-                     alt="Nešťastná žena z dítěte, které se chce nakojit"/>
+                     alt="Podpora při odstavování dítěte s respektem a láskou"/>
             </div>
 
             <!-- Offer 6-->
             <div class="offer-img-box">
-                <img class="offer-img" src="img/offers/doplnkove-sluzby-offer.jpg" alt="Žena s dítětem v nosítku"
+                <img class="offer-img" src="img/offers/doplnkove-sluzby-offer.jpg" alt="Nošení dětí v ergonomickém nosítku"
                 />
             </div>
             <div class="offer-text-box">
                 <h3 class="heading-tertiary">
-                    Doplňkové služby
+                    Nošení dětí a doplňkové služby
                 </h3>
                 <p class="offer-description">
                     Až 50% žen se během kojícího období setká s poraněním bradavek různého původu.
@@ -348,7 +439,7 @@
         <div class="container">
             <span class="section-subtitle pricing-subtitle">Ceník služeb</span>
             <h2 class="heading-secondary">
-                Transparentní ceny pro Vaše potřeby
+                Ceník laktačního poradenství v HK kraji
             </h2>
         </div>
 
@@ -913,6 +1004,20 @@
         </div>
     </section>
 
+    <section class="section-faq" id="faq">
+        <div class="container">
+            <span class="section-subtitle faq-subtitle center-text">Časté dotazy</span>
+            <h2 class="heading-secondary center-text">
+                Vše, co potřebujete vědět o konzultacích
+            </h2>
+        </div>
+        <div class="container faq-container">
+            <div class="faq-list">
+                <!-- FAQ Items are injected via js/faq-renderer.js -->
+            </div>
+        </div>
+    </section>
+
     <section class="section-cta" id="cta">
         <div class="container">
             <div class="cta">
@@ -998,6 +1103,9 @@
             <address class="contacts">
                 <p class="address-name">Mgr. Kristýna Čepelková</p>
                 <p class="address">Staré Nechanice 216, Nechanice, 503&nbsp;15</p>
+                <p class="margin-bottom-sm">
+                    <strong>Působím v:</strong> Hradci Králové, Nechanicích, Hořicích, Novém Bydžově, Jaroměři a okolí.
+                </p>
                 <p>
                     <a class="footer-link" href="tel:+420732281867">+420 732 281 867</a>
                     <br/>

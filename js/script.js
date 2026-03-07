@@ -29,7 +29,12 @@ allLinks.forEach(function (link) {
             if (href !== "#" && href.startsWith("#")) {
                 const sectionEl = document.querySelector(href);
                 if (sectionEl) {
-                    const topOffset = headerHeight;
+                    // To get the correct offset, we must measure the header as it will be during scroll (sticky)
+                    const isSticky = headerEl.classList.contains("sticky");
+                    if (!isSticky) headerEl.classList.add("sticky");
+                    const topOffset = headerEl.getBoundingClientRect().height;
+                    if (!isSticky) headerEl.classList.remove("sticky");
+
                     const elementPosition = sectionEl.getBoundingClientRect().top + window.scrollY;
                     const offsetPosition = elementPosition - topOffset;
 
@@ -67,7 +72,8 @@ const observer = new IntersectionObserver(function (entries) {
     }
 }, {
     root: null,
-    threshold: 0
+    threshold: 0,
+    rootMargin: "-50px"
 });
 
 observer.observe(sectionHeroEl);

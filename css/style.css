@@ -8,14 +8,20 @@
     justify-content: space-between;
     background-color: var(--primary-color--tint-90);
 
-    /* Because of sticky header */
-    height: 16.0rem;
+    height: 9.6rem;
     padding: 0 4.8rem;
     position: relative;
+    z-index: 100;
 }
 
 .logo {
-    height: 15.4rem;
+    /* Fixed size as requested */
+    height: 15rem;
+    /* Pushed lower down */
+    transform: translateY(4rem);
+    /* Shadow follows the PNG curves */
+    filter: drop-shadow(0 1.2rem 1.2rem rgba(0, 0, 0, 0.15));
+    transition: all 0.3s;
 }
 
 /*************************************/
@@ -51,6 +57,10 @@
 
 .main-nav-list li:nth-child(3) .main-nav-link:hover {
     color: var(--secondary-color--shade-10);
+}
+
+.main-nav-list li:nth-child(4) .main-nav-link:hover {
+    color: var(--primary-color--shade-10);
 }
 
 .main-nav-link.nav-cta:is(:link, :visited) {
@@ -90,12 +100,21 @@
     top: 0;
     bottom: 0;
     width: 100%;
+    height: 8rem;
     padding-top: 0;
     padding-bottom: 0;
-    background-color: var(--primary-color--tint-90);
+    background-color: var(--primary-color--tint-90--alpha97);
+    backdrop-filter: blur(8px);
     z-index: 9999;
-    /* TODO tohle musí být v proměnné a taky tam udělat efekt obálky*/
+    /* Envelope effect: dark crease shadow */
     box-shadow: 0 1.2rem 2.4rem -2.4rem rgba(0, 0, 0, 0.8);
+}
+
+.sticky .logo {
+    height: 15rem; /* Stays same size */
+    /* Position compensation: (9.6-8.0)/2 = 0.8rem diff in centering */
+    transform: translateY(4.8rem);
+    filter: drop-shadow(0 1.2rem 2.4rem rgba(0, 0, 0, 0.2));
 }
 
 /*************************************/
@@ -104,7 +123,7 @@
 
 .section-hero {
     background-color: var(--primary-color--tint-90);
-    padding: 4.8rem 0 9.6rem 0;
+    padding: 12.8rem 0 9.6rem 0;
 }
 
 .hero {
@@ -177,18 +196,58 @@
     text-transform: uppercase;
     color: var(--grey-color--8);
     letter-spacing: 0.75px;
-    margin-bottom: 2.4rem;
+    margin-bottom: 3.2rem;
 }
 
 .featured-img-box {
     display: flex;
     justify-content: space-around;
+    gap: 2.4rem;
+}
+
+.featured-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1.6rem;
+    border-radius: var(--border-radius--8);
 }
 
 .featured-img {
     height: 9.6rem;
-    filter: brightness(0);
-    opacity: 50%;
+    margin-bottom: 1.2rem;
+    filter: grayscale(100%) brightness(0.75) contrast(1.1);
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+
+.featured-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--grey-color--5);
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: all 0.4s ease;
+}
+
+/* Hover effects */
+.featured-item:hover {
+    transform: translateY(-0.8rem);
+}
+
+.featured-item:hover .featured-img {
+    filter: grayscale(0) brightness(1) contrast(1);
+    opacity: 100%;
+    transform: scale(1.1);
+}
+
+.featured-item:hover .featured-text {
+    opacity: 1;
+    transform: translateY(0);
+    color: var(--primary-color--shade-10);
 }
 
 /*************************************/
@@ -461,6 +520,110 @@
 
 .testimonial-card-wrapper .swiper-slide-button {
     color: var(--secondary-color--shade-10);
+}
+
+/*************************************/
+/* FAQ SECTION */
+/*************************************/
+
+.section-faq {
+    padding: 9.6rem 0;
+}
+
+.faq-subtitle {
+    color: var(--primary-color--shade-10);
+    text-align: center;
+}
+
+.faq-list {
+    max-width: 80rem;
+    margin: 4.8rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.faq-item {
+    background-color: var(--primary-color--tint-90);
+    padding: 2.4rem 3.2rem;
+    border-radius: var(--border-radius--8);
+    box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 2.4rem;
+    /* We align items to start to prevent jumping when height changes */
+    align-items: start;
+
+    transition: all 0.3s;
+    border-top: 4px solid transparent;
+}
+
+.faq-item:hover {
+    box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.1);
+}
+
+.faq-number {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--grey-color--a);
+    /* Ensure number stays at top line */
+    line-height: 1.2;
+}
+
+.faq-question {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--grey-color--3);
+    line-height: 1.2;
+}
+
+.faq-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+/* Modern smooth accordion animation */
+.faq-answer-box {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out, opacity 0.3s, margin-top 0.3s;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.faq-answer {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: var(--grey-color--5);
+    min-height: 0;
+}
+
+/* OPEN STATE */
+.faq-open {
+    border-top: 4px solid var(--primary-color);
+}
+
+.faq-open .faq-answer-box {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 1.6rem;
+}
+
+.faq-open .faq-question {
+    color: var(--primary-color--shade-30);
+}
+
+.faq-open .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-open .faq-number {
+    color: var(--primary-color--tint-60);
 }
 
 /*************************************/
