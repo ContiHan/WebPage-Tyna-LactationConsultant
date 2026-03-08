@@ -20,16 +20,34 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
 
-    <title>Kalkulačka ceny služeb | Laktační poradkyně Týna</title>
-    <meta name="description" content="Kalkulačka pro výpočet ceny laktačních a poradenských služeb">
+    <title>Orientační kalkulačka ceny | Laktační poradkyně Týna</title>
+    <meta name="description" content="Spočítejte si orientační cenu laktační konzultace nebo předporodní přípravy včetně cestovného v Královéhradeckém kraji.">
+    <link rel="canonical" href="https://lptyna.cz/work-hours-cost-calculator.html"/>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Orientační kalkulačka ceny | Laktační poradkyně Týna">
+    <meta property="og:description" content="Spočítejte si orientační cenu laktační konzultace nebo předporodní přípravy.">
+    <meta property="og:url" content="https://lptyna.cz/work-hours-cost-calculator.html">
+    <meta property="og:image" content="https://lptyna.cz/img/logos/lptyna-logo-colored.webp">
 </head>
 <body>
 <main class="calculator-main">
     <div class="container">
+        <div class="margin-bottom-md">
+            <a href="index.html#pricing" class="btn btn--secondary">&larr; Zpět na úvodní stránku</a>
+        </div>
+
         <h1 class="heading-primary calculator-title">Kalkulačka ceny služeb</h1>
         <p class="calculator-subtitle">Vyberte poskytnuté služby a zadejte potřebné hodnoty pro výpočet celkové ceny</p>
 
         <div class="calculator-container">
+            <div class="calculator-section" style="background-color: var(--tertiary-color--tint-90); border-bottom: none; padding: 2.4rem 4.8rem;">
+                <p style="font-size: 1.6rem; line-height: 1.6; color: var(--tertiary-color--shade-70); text-align: center;">
+                    <strong>Důležité upozornění:</strong> Tento výpočet je pouze <strong>orientační</strong>. 
+                    Konečná cena je vždy individuální a závisí na skutečné délce trvání konzultace a vašich konkrétních potřebách.
+                </p>
+            </div>
+
             <!-- Hlavní služby -->
             <section class="calculator-section">
                 <h2 class="heading-secondary">Hlavní služby</h2>
@@ -313,9 +331,20 @@
 
             <!-- Celková cena -->
             <div class="total-section">
-                <h2 class="heading-secondary">Celková cena</h2>
+                <h2 class="heading-secondary">Orientační celková cena*</h2>
                 <div class="total-price" id="total-price">0 Kč</div>
                 <button class="btn-reset" id="btn-reset">Resetovat kalkulačku</button>
+                <p style="font-size: 1.4rem; color: #777; margin-top: 2.4rem; font-style: italic;">
+                    * Zobrazená cena je pouze pro Vaši představu. Skutečná cena za konzultaci se může lišit podle individuální náročnosti a přesné délky návštěvy.
+                </p>
+            </div>
+
+            <!-- Platební informace -->
+            <div class="calculator-section payment-info-section">
+                <p class="center-text" style="font-size: 1.6rem; line-height: 1.6; color: #555;">
+                    <strong>Platba probíhá až po konzultaci</strong> na základě vystavené faktury. <br>
+                    Zaplatit můžete <strong>hotově</strong>, <strong>bankovním převodem</strong> nebo pohodlně pomocí <strong>QR kódu</strong>.
+                </p>
             </div>
         </div>
     </div>

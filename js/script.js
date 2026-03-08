@@ -1,5 +1,10 @@
 "use strict";
 
+// Prevent browser from jumping to hash on reload/navigation
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 // dynamic year in copyright
 const copyrightYearEl = document.querySelector(".copyright-year");
 copyrightYearEl.textContent = new Date().getFullYear().toString();
@@ -20,6 +25,11 @@ allLinks.forEach(function (link) {
         if (href.startsWith("#") || href === "#") {
             e.preventDefault();
 
+            // Clear hash from URL if it exists
+            if (window.location.hash) {
+                window.history.replaceState(null, null, window.location.pathname);
+            }
+
             if (href === "#") {
                 window.scrollTo({
                     top: 0,
@@ -29,19 +39,7 @@ allLinks.forEach(function (link) {
             if (href !== "#" && href.startsWith("#")) {
                 const sectionEl = document.querySelector(href);
                 if (sectionEl) {
-                    // To get the correct offset, we must measure the header as it will be during scroll (sticky)
-                    const isSticky = headerEl.classList.contains("sticky");
-                    if (!isSticky) headerEl.classList.add("sticky");
-                    const topOffset = headerEl.getBoundingClientRect().height;
-                    if (!isSticky) headerEl.classList.remove("sticky");
-
-                    const elementPosition = sectionEl.getBoundingClientRect().top + window.scrollY;
-                    const offsetPosition = elementPosition - topOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
+                    scrollToSection(sectionEl);
                 }
             }
         }
@@ -49,6 +47,42 @@ allLinks.forEach(function (link) {
             headerEl.classList.toggle("nav-open");
         }
     });
+});
+
+function scrollToSection(sectionEl, behavior = "smooth") {
+    // To get the correct offset, we must measure the header as it will be during scroll (sticky)
+    // We add the sticky class temporarily to measure its height
+    const isSticky = headerEl.classList.contains("sticky");
+    if (!isSticky) headerEl.classList.add("sticky");
+    const topOffset = headerEl.getBoundingClientRect().height;
+    if (!isSticky) headerEl.classList.remove("sticky");
+
+    // Use pageYOffset for a more stable absolute coordinate calculation
+    const elementPosition = sectionEl.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - topOffset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: behavior
+    });
+}
+
+// Handle initial hash on page load (e.g. returning from calculator)
+// Use 'load' instead of 'DOMContentLoaded' to wait for all images and final layout
+window.addEventListener("load", function() {
+    if (window.location.hash) {
+        const id = window.location.hash;
+        const sectionEl = document.querySelector(id);
+        
+        if (sectionEl) {
+            // Tiny delay to ensure browser finished its internal layout processes
+            setTimeout(() => {
+                scrollToSection(sectionEl, "auto");
+                // Clean the URL AFTER we are in position
+                window.history.replaceState(null, null, window.location.pathname);
+            }, 50);
+        }
+    }
 });
 
 // sticky navigation

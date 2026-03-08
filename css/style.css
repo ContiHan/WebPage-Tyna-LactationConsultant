@@ -714,7 +714,7 @@
     border: 0.3rem solid var(--tertiary-color--tint-90);
 }
 
-.cta-form textarea::-webkit-scrollbar-thumb:hover {
+.cta-form textarea::-webkit-scrollbar-thumb {
     background-color: var(--tertiary-color--shade-70);
 }
 
@@ -897,4 +897,53 @@
     flex-direction: column;
     gap: 2.4rem;
     list-style: none;
+}
+
+/* ============================== */
+/* CALCULATOR CTA SECTION */
+/* ============================== */
+
+.section-calculator-cta {
+    padding: 9.6rem 0;
+    background-color: var(--primary-color--tint-90);
+}
+
+.calculator-cta-text {
+    font-size: 1.8rem;
+    margin-bottom: 2.4rem;
+    color: #555;
+}
+
+.calculator-disclaimer {
+    font-size: 1.4rem;
+    color: #777;
+    margin-top: 1.6rem;
+    font-style: italic;
+}
+
+.btn--calculator-cta {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1.6rem 3.2rem;
+    font-size: 1.8rem;
+    transition: all 0.3s;
+}
+
+.btn--calculator-cta:hover {
+    background-color: var(--primary-color--shade-30) !important;
+    color: #fff !important;
+    box-shadow: 0 1rem 2rem rgba(155, 133, 189, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn--calculator-cta:active {
+    transform: translateY(0);
+}
+
+/* ============================== */
+/* PRICING FEATURES SECTION */
+/* ============================== */
+
+.section-pricing-features {
+    padding: 9.6rem 0;
 }

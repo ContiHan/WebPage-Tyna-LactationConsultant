@@ -233,6 +233,18 @@ body {
     color: var(--tertiary-color--shade-70);
 }
 
+.btn--secondary {
+    background-color: var(--grey-color--f);
+    color: #555;
+    border: 1px solid #ddd !important;
+    font-size: 1.6rem !important;
+    padding: 1rem 2rem !important;
+}
+
+.btn--secondary:hover {
+    background-color: #eee;
+}
+
 .btn--modal {
     margin-top: 1.6rem;
     background-color: var(--grey-color--3);

@@ -7,7 +7,7 @@ const FAQ_DATA = [
     {
         id: 1,
         question: "Jak probíhá laktační konzultace u mě doma?",
-        answer: "Osobní návštěva trvá obvykle 60–90 minut. V klidu probereme vaše potřeby, zkontrolujeme techniku kojení a nastavíme praktické kroky pro vaši spokojenost. Součástí je i následná podpora na telefonu."
+        answer: "Osobní návštěva trvá obvykle 60–120 minut. V klidu probereme vaše potřeby, zkontrolujeme techniku kojení a nastavíme praktické kroky pro vaši spokojenost. Součástí je i následná podpora na telefonu."
     },
     {
         id: 2,
@@ -53,6 +53,11 @@ const FAQ_DATA = [
         id: 10,
         question: "Fungujete i během víkendů nebo státních svátků?",
         answer: "Laktační krize a dotazy si čas nevybírají. Proto jsem pro krizovou podporu i konzultace k dispozici denně od 6:00 do 22:00, včetně víkendů a svátků, abychom situaci vyřešily co nejdříve."
+    },
+    {
+        id: 11,
+        question: "Jak a kdy probíhá platba za konzultaci?",
+        answer: "Platba probíhá až po naší konzultaci. Zaplatit můžete hotově na místě, nebo na základě vystavené faktury bankovním převodem či naskenováním přiloženého QR kódu."
     }
 ];
 
