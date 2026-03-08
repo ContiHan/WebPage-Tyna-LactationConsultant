@@ -947,3 +947,44 @@
 .section-pricing-features {
     padding: 9.6rem 0;
 }
+
+/* ============================== */
+/* TESTIMONIALS FACEBOOK LINK */
+/* ============================== */
+
+.testimonials-all-link-box {
+    margin-top: 4.8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.btn--facebook-reviews:is(:link, :visited) {
+    background-color: #fff !important;
+    color: var(--secondary-color--shade-10) !important;
+    border: 2px solid var(--secondary-color--shade-10) !important;
+    font-size: 1.8rem !important;
+    padding: 1.2rem 2.4rem !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    border-radius: var(--border-radius--8);
+    transition: all 0.3s;
+}
+
+.btn--facebook-reviews:hover,
+.btn--facebook-reviews:active {
+    background-color: var(--secondary-color--tint-90) !important;
+    border-color: var(--secondary-color--shade-50) !important;
+    color: var(--secondary-color--shade-50) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.facebook-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: currentColor !important;
+}
+
